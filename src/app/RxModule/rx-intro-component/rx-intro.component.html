@@ -1,0 +1,97 @@
+<h3>RXComponent</h3>
+  <table>
+    <tr>
+      <td>
+<!--        IntervalStream-->
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              IntervalStream
+            </mat-panel-title>
+            <mat-panel-description>
+              <p> currentIntervalValue: {{currentIntervalValue}}</p>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <p><mat-slide-toggle color="primary"
+            [checked]="isSubscribeIntervalStream"
+            (change)="changeSubscribeIntervalStream()"
+          >
+            Interval stream to LogBox (integer: 500ms)
+          </mat-slide-toggle></p>
+
+          mouseX: {{mouseScreenX}}, mouseY  {{mouseScreenY}}
+
+        </mat-expansion-panel>
+
+<!--        static Observable-->
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              static Observable
+            </mat-panel-title>
+            <mat-panel-description>
+              of / from / concat
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <p><button mat-button color="primary" (click)="ofHello()">of(...('Hello'.split(''))).subscribe</button></p>
+          <p><button mat-button color="primary" (click)="fromGoodBye()">from('GoodBye!').subscribe(value =></button></p>
+          <p><button mat-button color="primary" (click)="concat1()">concat (take, range)</button></p>
+          <p><button mat-button color="primary" (click)="merge1()">merge (take, range)</button></p>
+
+        </mat-expansion-panel>
+
+<!--        Subject-->
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Subject
+            </mat-panel-title>
+            <mat-panel-description>
+              currentSubjectValue: {{currentSubjectValue}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <p><mat-slide-toggle color="primary"
+                               [checked]="isSubjectStream"
+                               (change)="changeSubjectStream()"
+          >
+            <strong> Subject: on/off </strong>
+          </mat-slide-toggle></p>
+
+<!--        Map-Pipe-->
+          <p><mat-slide-toggle color="primary"s
+            [(ngModel)]="showMapPipe">
+            Show Map-pipe x*x
+          </mat-slide-toggle></p>
+
+<!--        scan-Pipe-->
+          <p><mat-slide-toggle color="primary"
+                               [(ngModel)]="showScanPipe">
+            scan((inter, curr) => inter + curr, 1000)
+          </mat-slide-toggle></p>
+
+          <!--        showFilterPipe-->
+          <p><mat-slide-toggle color="primary"
+                               [(ngModel)]="showFilterPipe">
+            filter(vl => (vl % 2) === 0
+          </mat-slide-toggle></p>
+
+        </mat-expansion-panel>
+
+
+
+      </td>
+<!--      log-box-->
+      <td>
+        <app-log-box></app-log-box>
+      </td>
+    </tr>
+  </table>
+
+
+
+
+
+

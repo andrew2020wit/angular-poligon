@@ -1,0 +1,59 @@
+$background-color-flex: aqua;
+
+h3 {
+  margin: 1em;
+}
+.flex-container {
+  display: flex;
+  background: $background-color-flex;
+}
+
+.inline-flex-container {
+  display: inline-flex;
+  background: $background-color-flex;
+}
+
+.row-reverse-flex-container {
+  display: flex;
+  flex-direction: row-reverse;
+  background: $background-color-flex;
+}
+
+.row-reverse-inline-flex-container {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  background: $background-color-flex;
+}
+
+.column-flex-container {
+  display: flex;
+  flex-direction: column;
+  background: $background-color-flex;
+}
+
+.column-reverse-flex-container {
+  display: flex;
+  flex-direction: column-reverse;
+  background: $background-color-flex;
+}
+
+.wrap-flex-container {
+  display: flex;
+  background: $background-color-flex;
+  flex-wrap: wrap;
+}
+
+.wrap-column-flex-container {
+  display: flex;
+  background: $background-color-flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 400px;
+}
+
+.flex-item {
+  text-align:center;
+  padding: 0.5em;
+  margin: 1em;
+  background-color: #EEEEEE;
+}

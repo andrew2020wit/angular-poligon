@@ -1,0 +1,72 @@
+<h3>Reactive Forms</h3>
+<form [formGroup]="profileForm" (ngSubmit)="Submit()" class="profileForm">
+  <mat-card>
+    <mat-card-content>
+      <mat-form-field class="your-name">
+        <mat-label>Your name:</mat-label>
+        <input matInput type="text" placeholder="Your name:" formControlName="personName">
+      </mat-form-field> <br>
+      <mat-form-field class="birthday">
+        <mat-label>Your birthday</mat-label>
+        <input matInput [min]="minDateBD" [max]="maxDateBD" [matDatepicker]="datePicker" formControlName="birthday">
+        <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
+        <mat-datepicker #datePicker startView="multi-year"></mat-datepicker>
+      </mat-form-field> <br>
+    </mat-card-content>
+  </mat-card>
+  <mat-card  class="FW-card">
+    <mat-card-title>
+      <h3>You used: </h3>
+    </mat-card-title>
+    <mat-card-content>
+      <section formGroupName="chFW">
+        <mat-checkbox formControlName="chAngular">Angular</mat-checkbox> <br>
+        <mat-checkbox formControlName="chReact">React</mat-checkbox> <br>
+        <mat-checkbox formControlName="chView">View</mat-checkbox> <br>
+      </section>
+      <section class="bestFramework">
+        <mat-form-field >
+          <mat-label>Choose the best FE-framework</mat-label>
+          <input type="text" placeholder="best FE-framework..."
+                 matInput [formControl]="profileForm.controls['bestFramework']" [matAutocomplete]="auto">
+        </mat-form-field>
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptionsBF | async"
+                      [value]="option">{{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </section> <br>
+    </mat-card-content>
+  </mat-card> <br>
+  <mat-card formGroupName="contacts">
+    <mat-card-title>Contacts</mat-card-title>
+    <mat-card-content>
+      <mat-form-field>
+        <mat-label>Telephone:</mat-label>
+        <span matPrefix>{{phonePrefix}}</span>
+        <input matInput type="tel" placeholder="50-555-5555" formControlName="telephone">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email:</mat-label>
+        <input matInput type="email" placeholder="email" formControlName="email">
+      </mat-form-field>
+      <mat-form-field style="width: 100%">
+        <mat-label>Address</mat-label>
+        <textarea matInput type="text" placeholder="Address" formControlName="address"> </textarea>
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+
+  <p> <button type="submit"  [disabled]="!profileForm.valid">Submit</button> </p>
+
+</form>
+
+<mat-card class="story-card">
+  <mat-card-title> Story</mat-card-title>
+  <mat-card-content>
+    <p>{{story.story1}}</p>
+    <p>{{story.storyFW}}</p>
+    <p>{{story.storyContacts}}</p>
+  </mat-card-content>
+</mat-card>
+

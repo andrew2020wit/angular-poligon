@@ -1,0 +1,12 @@
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+
+var
+isChecked : boolean
+
+
+<mat-slide-toggle
+  [(ngModel)]="isChecked"
+  (change)="changeRunIntervalStream()"
+>Slide me!
+</mat-slide-toggle>
+

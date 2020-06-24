@@ -1,0 +1,49 @@
+<h1>Grid Layout</h1>
+
+
+<mat-tab-group mat-align-tabs="start" color="primary">
+
+  <mat-tab label="1111">
+
+    <h3> grid-container </h3>
+    <div class="grid-container">
+      <div class="grid-item" *ngFor="let i of arr"> grid-item #{{i}}</div>
+    </div>
+
+    <hr/>
+
+    <h3> inline-grid-container </h3>
+    <div class="inline-grid-container">
+      <div class="grid-item" *ngFor="let i of arr"> grid-item #{{i}}</div>
+    </div>
+
+  </mat-tab>
+
+  <mat-tab label="3 Columns">
+
+    <h3> c3-grid-container </h3>
+    <div class="c3-grid-container">
+      <div class="grid-item" *ngFor="let i of arr"> grid-item #{{i}}</div>
+    </div>
+
+    <hr/>
+
+    <h3> auto3-grid-container </h3>
+    <div class="auto3-grid-container">
+      <div class="grid-item" *ngFor="let i of arr">
+
+        <app-box-ph>grid-item #{{i}}</app-box-ph>
+      </div>
+    </div>
+
+    <h3>fr-grid-container 1fr 3fr 10fr </h3>
+    <div class="fr-grid-container">
+      <div class="grid-item" *ngFor="let i of arr">
+
+        <app-box-ph>grid-item #{{i}}</app-box-ph>
+      </div>
+    </div>
+
+  </mat-tab>
+
+</mat-tab-group>

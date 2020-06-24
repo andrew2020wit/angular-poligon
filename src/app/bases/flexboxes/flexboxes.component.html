@@ -1,0 +1,82 @@
+<p>flexboxes works!</p>
+
+<mat-tab-group mat-align-tabs="start">
+
+  <mat-tab label="Rows">
+
+    <h3> flex-container </h3>
+    <div class="flex-container">
+      <div class="flex-item " *ngFor="let i of arr"> flex-item #{{i}}</div>
+    </div>
+
+    <hr/>
+    <h3> inline-flex-container </h3>
+    <div class="inline-flex-container">
+      <div class="flex-item " *ngFor="let i of arr"> flex-item #{{i}}</div>
+    </div>
+
+    <hr/>
+    <h3> row-reverse-flex-container </h3>
+    <div class="row-reverse-flex-container">
+      <div class="flex-item " *ngFor="let i of arr"> flex-item #{{i}}</div>
+    </div>
+    <hr/>
+    <h3> row-reverse-inline-flex-container </h3>
+    <div class="row-reverse-inline-flex-container">
+      <div class="flex-item " *ngFor="let i of arr"> flex-item #{{i}}</div>
+    </div>
+
+    <hr/>
+    <h3> wrap-flex-container </h3>
+    <div class="wrap-flex-container">
+      <div class="flex-item " *ngFor="let i of arr"> flex-item #{{i}}</div>
+    </div>
+
+  </mat-tab>
+
+  <mat-tab label="Colums">
+
+    <h3> column-flex-container </h3>
+    <div class="column-flex-container">
+      <div class="flex-item " *ngFor="let i of arr"> flex-item #{{i}}</div>
+    </div>
+
+    <hr/>
+    <h3> column-reverse-flex-container </h3>
+    <div class="column-reverse-flex-container">
+      <div class="flex-item " *ngFor="let i of arr"> flex-item #{{i}}</div>
+    </div>
+
+    <hr/>
+    <h3> wrap-column-flex-container (400px height) </h3>
+    <div class="wrap-column-flex-container">
+      <div class="flex-item " *ngFor="let i of arr"> flex-item #{{i}}</div>
+    </div>
+
+
+  </mat-tab>
+
+  <mat-tab label="3-flex-item">
+
+    <h3> flex-container </h3>
+    <div class="flex-container">
+      <div class="flex-item"> Lorem ipsum dolor sit amet.</div>
+      <div class="flex-item"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut earum eos, explicabo iste
+        nisi non officia qui quidem sunt totam.</div>
+      <div class="flex-item"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, magni.</div>
+    </div>
+
+    <h3> inline-flex-container </h3>
+    <div class="inline-flex-container">
+        <div class="flex-item"> Lorem ipsum dolor sit amet.
+        </div>
+        <div class="flex-item"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut earum eos, explicabo iste
+          nisi non officia qui quidem sunt totam.
+        </div>
+        <div class="flex-item"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, magni.
+        </div>
+
+    </div>
+
+  </mat-tab>
+</mat-tab-group>

@@ -1,0 +1,22 @@
+<h1>Home Page</h1>
+    <mat-card  class="home-card" *ngFor=" let block of contentService.blockPages">
+
+      <mat-card-title>
+        <h2>{{block.blockName}}</h2>
+      </mat-card-title>
+
+      <mat-card-content>
+
+        <mat-nav-list>
+          <a mat-list-item
+             *ngFor="let link of block.links"
+             href="{{link.link}}"><mat-icon>arrow_right_alt</mat-icon>
+            <span>{{ link.name }}</span>
+          </a>
+        </mat-nav-list>
+
+      </mat-card-content>
+
+    </mat-card>
+
+

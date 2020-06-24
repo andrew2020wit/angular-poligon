@@ -1,0 +1,10 @@
+import {GuiElementsModule} from '../gui-elements/gui-elements.module';
+
+import {LogBoxComponent} from '../../gui-elements/log-box/log-box.component';
+
+@ViewChild(LogBoxComponent, {static: false})
+private logBox: LogBoxComponent;
+
+this.logBox.add({source: 'subscribeIntervalStream', colorBG: 'yellow', message: `value: ${value}`});
+
+<app-log-box></app-log-box>

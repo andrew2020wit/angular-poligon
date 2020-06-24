@@ -1,0 +1,16 @@
+.mat-column-id,
+.mat-column-data,
+.mat-column-source,
+.mat-column-message {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+td {
+  border: 1px grey solid ;
+
+}
+
+mat-expansion-panel {
+  width: fit-content;
+}

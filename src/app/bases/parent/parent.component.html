@@ -1,0 +1,16 @@
+<h3>Parent component</h3>
+<p>parentNumberProperty: {{parentNumberProperty}}</p>
+
+<h4>childComponent1.goUpThis</h4>
+<button (click)="childComponent1.goUpThis(10)">childComponent1.goUpThis</button>
+
+<app-child #childComponent1
+  [inputString]="fromParentString"
+  (onGoUpParent)="onGoUpParent2($event)"
+>
+  <p>ng-content</p>
+
+
+</app-child>
+
+<app-child2></app-child2>

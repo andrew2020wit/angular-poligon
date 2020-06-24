@@ -1,0 +1,22 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.red-color {
+  color: red;
+}
+
+.green-color {
+  color: green;
+}
+
+.blue-color {
+  color: blue;
+}
+
+.flex-container {
+  display: flex;
+}
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

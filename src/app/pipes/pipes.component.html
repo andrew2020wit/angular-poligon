@@ -1,0 +1,17 @@
+<p>pipes works!</p>
+
+<h4>Built-in pipes</h4>
+
+<ol>
+  <li>currentDate (without pipe): {{currentDate}}</li>
+  <li>currentDate (pipe: date): {{currentDate | date}}</li>
+  <li>currentDate (pipe: date:"dd/MM/yyyy"): {{currentDate | date:"dd/MM/yyyy"}}</li>
+</ol>
+
+<h4>Custom pipes, textSpoiler</h4>
+
+<input type="text" [(ngModel)]="textInput">
+
+<ol>
+  <li> {{ textInput | textSpoiler}}</li>
+</ol>
