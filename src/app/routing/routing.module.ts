@@ -18,9 +18,11 @@ import {TempComponent} from '../bases/temp/temp.component';
 import {GuiTestAreaComponent} from '../gui-elements/gui-test-area/gui-test-area.component';
 import {FlexboxesComponent} from '../bases/flexboxes/flexboxes.component';
 import {GridComponent} from '../bases/grid/grid.component';
+import {TestAreaComponent} from '../bases/test-area/test-area.component';
 
 const appRoutes: Routes = [
   { path: 'bindings', component: BindingsComponent, pathMatch: 'full' },
+  { path: 'test-area', component: TestAreaComponent, pathMatch: 'full' },
   { path: 'temp-component', component: TempComponent, pathMatch: 'full' },
   { path: 'flex-boxes', component: FlexboxesComponent, pathMatch: 'full' },
   { path: 'grid', component: GridComponent, pathMatch: 'full' },

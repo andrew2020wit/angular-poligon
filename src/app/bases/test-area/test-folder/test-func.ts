@@ -5,3 +5,4 @@ export function moreThan10(x: number): boolean {
   } else { return false; }
 
 }
+

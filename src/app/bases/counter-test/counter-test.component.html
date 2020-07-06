@@ -1,0 +1,8 @@
+<h1>app-counter-test</h1>
+
+<p id="counterView" [class.green-color]="counter %2 === 0">
+  counter: {{counter}}
+</p>
+
+<button id="increment" (click)="increment()">increment()</button>
+<button (click)="decrement()">decrement()</button>

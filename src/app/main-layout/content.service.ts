@@ -39,6 +39,7 @@ export class ContentService {
     },
     { blockId: '9b', blockName: 'Archive', links: [
         { id: 'bindings', name: 'Bindings', link: '/bindings'},
+        { id: 'test-area', name: 'test-area', link: '/test-area'},
         { id: 'parent', name: 'Parent-Child interaction', link: '/parent'},
         { id: 'directives', name: 'Directives', link: '/directives'},
         { id: 'pipes', name: 'Pipes', link: '/pipes'},
