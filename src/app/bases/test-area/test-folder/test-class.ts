@@ -1,5 +1,6 @@
-import {EventEmitter, Output} from '@angular/core';
+import { EventEmitter, Output, Directive } from '@angular/core';
 
+@Directive()
 export class TestClass {
   counter = 0;
 
