@@ -1,11 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { DemoMaterialComponent } from './demo-material.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {DemoMaterialComponent} from './demo-material.component';
 import {ShareModule} from '../share.module';
 import {FormsModule} from '@angular/forms';
-import { RoutingModule } from '../routing/routing.module';
-import { TablesComponent } from './tables/tables.component';
-
+import {RoutingModule} from '../routing/routing.module';
+import {TablesComponent} from './tables/tables.component';
 
 
 @NgModule({
@@ -18,4 +17,5 @@ import { TablesComponent } from './tables/tables.component';
   ],
   exports: [DemoMaterialComponent]
 })
-export class DemoMaterialModule { }
+export class DemoMaterialModule {
+}
