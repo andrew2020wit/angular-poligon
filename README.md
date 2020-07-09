@@ -2,10 +2,10 @@
 
 Test-demo angular project.
 
-## Note
-
-### cli
-Creates a new generic component definition
-* ng g c nameComponent --skipTests
-* ng g c Folder/component --skipTests --module=module
-
+1. Angular Basics (reactive forms,
+ animation, custom directive, pipe, services)
+1. Routing, modules
+2. Angular Material
+3. RxJS
+5. Unit-Test, TestBed.
+99. FlexBox, GridLayout 
