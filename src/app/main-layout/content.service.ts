@@ -33,6 +33,7 @@ export class ContentService {
       blockId: '4b', blockName: 'Material Design', links: [
         {id: '4b2', name: 'Tables', link: '/demo-material/tables'},
         {id: '4b3', name: 'GuiTestAreaComponent', link: '/demo-material/gui-test-area'},
+        {id: 'platformcdk', name: 'Platform-cdk', link: '/demo-material/platform-cdk'},
       ]
     },
     {

@@ -5,10 +5,11 @@ import {ShareModule} from '../share.module';
 import {FormsModule} from '@angular/forms';
 import {RoutingModule} from '../routing/routing.module';
 import {TablesComponent} from './tables/tables.component';
+import { PlatformCdkComponent } from './platform-cdk/platform-cdk.component';
 
 
 @NgModule({
-  declarations: [DemoMaterialComponent, TablesComponent],
+  declarations: [DemoMaterialComponent, TablesComponent, PlatformCdkComponent],
   imports: [
     CommonModule,
     FormsModule,

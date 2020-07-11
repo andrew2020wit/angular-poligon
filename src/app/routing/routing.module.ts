@@ -19,6 +19,7 @@ import {GuiTestAreaComponent} from '../gui-elements/gui-test-area/gui-test-area.
 import {FlexboxesComponent} from '../bases/flexboxes/flexboxes.component';
 import {GridComponent} from '../bases/grid/grid.component';
 import {TestAreaComponent} from '../bases/test-area/test-area.component';
+import {PlatformCdkComponent} from '../demo-material/platform-cdk/platform-cdk.component';
 
 const appRoutes: Routes = [
   { path: 'bindings', component: BindingsComponent},
@@ -38,6 +39,7 @@ const appRoutes: Routes = [
   { path: 'demo-material', component: DemoMaterialComponent, children: [
       { path: 'tables', component: TablesComponent},
       { path: 'gui-test-area', component: GuiTestAreaComponent},
+      { path: 'platform-cdk', component: PlatformCdkComponent},
     ] },
   { path: '', component: HomePageComponent },
   { path: '**', component: NotFoundPageComponent },
