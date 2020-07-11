@@ -23,6 +23,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 const MaterialModules = [
   BrowserAnimationsModule,
@@ -45,6 +46,7 @@ const MaterialModules = [
   MatTableModule,
   MatTabsModule,
   MatToolbarModule,
+  MatProgressSpinnerModule,
   MatSidenavModule,
   MatSortModule,
   MatSliderModule,
