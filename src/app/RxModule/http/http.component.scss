@@ -1,0 +1,20 @@
+.example-container {
+  width: 800px;
+}
+
+.example-table {
+  width: 100%;
+}
+
+.mat-cell {
+  border: 1px solid grey;
+  padding: 0.3em;
+}
+
+.example-loading-shade {
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  z-index: 1;
+
+}

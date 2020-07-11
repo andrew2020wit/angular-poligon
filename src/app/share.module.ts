@@ -24,9 +24,11 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 const MaterialModules = [
   BrowserAnimationsModule,
+  DragDropModule,
   LayoutModule,
   MatAutocompleteModule,
   MatButtonModule,
