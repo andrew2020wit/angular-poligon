@@ -6,16 +6,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./grid.component.scss']
 })
 export class GridComponent implements OnInit {
+  items = [];
+  itemNumber = 8;
+  minItemNumber = 2;
+  maxItemNumber = 50;
+  itemText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, molestias!';
 
-  arr = [];
+  gridTC = 'auto auto auto';
+  gridTR = 'auto auto auto';
 
-  constructor() {
-    for (let i = 0; i < 20; i++) {
-      this.arr[i] = 10 ** i;
-    }
-  }
+
+  constructor() {}
 
   ngOnInit(): void {
+    this.setItems();
   }
+
+  setItems(){
+    this.items = [];
+    for (let i = 0; i < this.itemNumber; i++) {
+      this.items[i] = i;
+    }
+  }
+  setItemNumber(){
+    if (this.itemNumber < this.minItemNumber) { this.itemNumber = this.minItemNumber; }
+    if (this.itemNumber > this.maxItemNumber) { this.itemNumber = this.maxItemNumber; }
+    this.setItems();
+  }
+
 
 }

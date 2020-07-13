@@ -1,49 +1,52 @@
 <h1>Grid Layout</h1>
-
-
-<mat-tab-group mat-align-tabs="start" color="primary">
-
-  <mat-tab label="1111">
-
-    <h3> grid-container </h3>
-    <div class="grid-container">
-      <div class="grid-item" *ngFor="let i of arr"> grid-item #{{i}}</div>
+<mat-expansion-panel [expanded]="true">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Parameters of grid
+    </mat-panel-title>
+    <mat-panel-description>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <div class="option-box">
+    <input type="number" id="itemNumber"
+           [min]="minItemNumber" [max]="maxItemNumber" [(ngModel)]="itemNumber">
+    <button mat-button color="primary" (click)="setItemNumber()">Set Item Number ({{minItemNumber}}-{{maxItemNumber}})
+    </button>
+  </div>
+  <mat-form-field appearance="fill">
+    <mat-label>grid-template-columns</mat-label>
+    <select matNativeControl required [(ngModel)]="gridTC">
+      <option value="auto auto auto">auto auto auto</option>
+      <option value="8em 8em">8em 8em</option>
+      <option value="repeat(4, 15em)">repeat(4, 15em)</option>
+      <option value="18em 3fr 1fr">18em 3fr 1fr</option>
+    </select>
+  </mat-form-field>
+  <div class="option-box">
+    <mat-form-field appearance="fill">
+      <mat-label>grid-template-rows</mat-label>
+      <select matNativeControl required [(ngModel)]="gridTR">
+        <option value="auto auto auto">auto auto auto</option>
+        <option value="8em 8em">8em 8em</option>
+        <option value="repeat(4, 15em)">repeat(4, 15em)</option>
+      </select>
+    </mat-form-field>
+  </div>
+  <div class="option-box">
+      <textarea id="itemText" rows="3" cols="50" [(ngModel)]="itemText">
+      </textarea>
+  </div>
+</mat-expansion-panel>
+<div class="testArea">
+  <div class="grid0-container"
+       [style.display]="'grid'"
+       [style.grid-template-columns]="gridTC"
+       [style.grid-template-rows]="gridTR"
+  >
+    <div class="grid0-item" *ngFor="let i of items">
+      <strong>flex-item <span style="color: red">#{{i + 1}}</span></strong>: {{itemText}}
     </div>
+  </div>
+</div>
 
-    <hr/>
 
-    <h3> inline-grid-container </h3>
-    <div class="inline-grid-container">
-      <div class="grid-item" *ngFor="let i of arr"> grid-item #{{i}}</div>
-    </div>
-
-  </mat-tab>
-
-  <mat-tab label="3 Columns">
-
-    <h3> c3-grid-container </h3>
-    <div class="c3-grid-container">
-      <div class="grid-item" *ngFor="let i of arr"> grid-item #{{i}}</div>
-    </div>
-
-    <hr/>
-
-    <h3> auto3-grid-container </h3>
-    <div class="auto3-grid-container">
-      <div class="grid-item" *ngFor="let i of arr">
-
-        <app-box-ph>grid-item #{{i}}</app-box-ph>
-      </div>
-    </div>
-
-    <h3>fr-grid-container 1fr 3fr 10fr </h3>
-    <div class="fr-grid-container">
-      <div class="grid-item" *ngFor="let i of arr">
-
-        <app-box-ph>grid-item #{{i}}</app-box-ph>
-      </div>
-    </div>
-
-  </mat-tab>
-
-</mat-tab-group>

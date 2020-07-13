@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {HttpJsonplaceholderComponent} from '../rx/http-jsonplaceholder/http-jsonplaceholder.component';
 
 interface ILink {
   id: string;
@@ -22,6 +21,7 @@ export class ContentService {
         {id: '1b1', name: 'Forms: Story', link: '/forms'},
         {id: 'animations', name: 'Animations', link: '/animations'},
         {id: 'flexboxes', name: 'Flexbox', link: '/flex-boxes'},
+        {id: 'grid', name: 'Grid Layout', link: '/grid'},
       ]
     },
     {
@@ -50,8 +50,6 @@ export class ContentService {
         {id: 'parent', name: 'Parent-Child interaction', link: '/parent'},
         {id: 'directives', name: 'Directives', link: '/directives'},
         {id: 'pipes', name: 'Pipes', link: '/pipes'},
-        {id: 'grid', name: 'Grid Layout', link: '/grid'},
-
       ]
     },
   ];
