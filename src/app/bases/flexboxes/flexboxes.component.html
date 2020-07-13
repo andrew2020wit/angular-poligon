@@ -1,82 +1,99 @@
-<p>flexboxes works!</p>
-
-<mat-tab-group mat-align-tabs="start">
-
-  <mat-tab label="Rows">
-
+<h1>Flexbox</h1>
+<mat-expansion-panel [expanded]="true">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Parameters of flexbox
+    </mat-panel-title>
+    <mat-panel-description>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <div class="option-box">
+    <input type="number" id="itemNumber"
+              [min]="minItemNumber" [max]="maxItemNumber" [(ngModel)]="itemNumber">
+    <button mat-button color="primary" (click)="setItemNumber()">Set Item Number ({{minItemNumber}}-{{maxItemNumber}})
+    </button>
+  </div>
+  <div class="option-box">
+      <textarea id="itemText"
+                rows="3" cols="50" [(ngModel)]="itemText">
+      </textarea>
+  </div>
+  <div class="option-box">
+    <mat-slide-toggle color="primary" [(ngModel)]="flexOn">
+      Flex On/Off(block)
+    </mat-slide-toggle>
+  </div>
+  <div class="option-box">
+    <mat-form-field appearance="fill">
+      <mat-label>wrap</mat-label>
+      <select matNativeControl required [(ngModel)]="wrapSelector">
+        <option value="nowrap" >nowrap</option>
+        <option value="wrap">wrap</option>
+        <option value="wrap-reverse">wrap-reverse</option>
+      </select>
+    </mat-form-field>
+  </div>
+  <div class="option-box">
+    <mat-form-field appearance="fill">
+      <mat-label>justify-content</mat-label>
+      <select matNativeControl required [(ngModel)]="justifyContentV">
+        <option value="flex-start" >flex-start</option>
+        <option value="flex-end">flex-end</option>
+        <option value="center">center</option>
+        <option value="space-between">space-between</option>
+        <option value="space-around">space-around</option>
+      </select>
+    </mat-form-field>
+  </div>
+  <div class="option-box">
+    <mat-form-field appearance="fill">
+      <mat-label>align-items</mat-label>
+      <select matNativeControl required [(ngModel)]="alignitemsV">
+        <option value="stretch" >stretch</option>
+        <option value="flex-start">flex-start</option>
+        <option value="center">center</option>
+        <option value="flex-end">flex-end</option>
+        <option value="baseline">baseline</option>
+      </select>
+    </mat-form-field>
+  </div>
+  <div class="option-box">
+    <mat-form-field appearance="fill">
+      <mat-label>align-content </mat-label>
+      <select matNativeControl required [(ngModel)]="aligncontentV">
+        <option value="stretch" >stretch</option>
+        <option value="flex-start">flex-start</option>
+        <option value="center">center</option>
+        <option value="flex-end">flex-end</option>
+        <option value="space-between">space-between</option>
+        <option value="space-around">space-around</option>
+      </select>
+    </mat-form-field>
+  </div>
+  <div class="option-box">
+    <mat-form-field appearance="fill">
+      <mat-label>flex-direction </mat-label>
+      <select matNativeControl required [(ngModel)]="flexDirectionV">
+        <option value="row" >row</option>
+        <option value="row-reverse">row-reverse</option>
+        <option value="column">column</option>
+        <option value="column-reverse">column-reverse</option>
+      </select>
+    </mat-form-field>
+  </div>
+</mat-expansion-panel>
+<div class="testArea">
     <h3> flex-container </h3>
-    <div class="flex-container">
-      <div class="flex-item " *ngFor="let i of arr"> flex-item #{{i}}</div>
+    <div class="flex0-container"
+         [style.display]="flexOn ? 'flex' : 'block'"
+         [style.flex-wrap]="wrapSelector"
+         [style.justify-content]="justifyContentV"
+         [style.align-items]="alignitemsV"
+         [style.align-content]="aligncontentV"
+         [style.flex-direction]="flexDirectionV"
+    >
+      <div class="flex0-item " *ngFor="let i of items">
+        <strong>flex-item <span style="color: red">#{{i+1}}</span></strong>: {{itemText}}
+      </div>
     </div>
-
-    <hr/>
-    <h3> inline-flex-container </h3>
-    <div class="inline-flex-container">
-      <div class="flex-item " *ngFor="let i of arr"> flex-item #{{i}}</div>
-    </div>
-
-    <hr/>
-    <h3> row-reverse-flex-container </h3>
-    <div class="row-reverse-flex-container">
-      <div class="flex-item " *ngFor="let i of arr"> flex-item #{{i}}</div>
-    </div>
-    <hr/>
-    <h3> row-reverse-inline-flex-container </h3>
-    <div class="row-reverse-inline-flex-container">
-      <div class="flex-item " *ngFor="let i of arr"> flex-item #{{i}}</div>
-    </div>
-
-    <hr/>
-    <h3> wrap-flex-container </h3>
-    <div class="wrap-flex-container">
-      <div class="flex-item " *ngFor="let i of arr"> flex-item #{{i}}</div>
-    </div>
-
-  </mat-tab>
-
-  <mat-tab label="Colums">
-
-    <h3> column-flex-container </h3>
-    <div class="column-flex-container">
-      <div class="flex-item " *ngFor="let i of arr"> flex-item #{{i}}</div>
-    </div>
-
-    <hr/>
-    <h3> column-reverse-flex-container </h3>
-    <div class="column-reverse-flex-container">
-      <div class="flex-item " *ngFor="let i of arr"> flex-item #{{i}}</div>
-    </div>
-
-    <hr/>
-    <h3> wrap-column-flex-container (400px height) </h3>
-    <div class="wrap-column-flex-container">
-      <div class="flex-item " *ngFor="let i of arr"> flex-item #{{i}}</div>
-    </div>
-
-
-  </mat-tab>
-
-  <mat-tab label="3-flex-item">
-
-    <h3> flex-container </h3>
-    <div class="flex-container">
-      <div class="flex-item"> Lorem ipsum dolor sit amet.</div>
-      <div class="flex-item"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut earum eos, explicabo iste
-        nisi non officia qui quidem sunt totam.</div>
-      <div class="flex-item"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, magni.</div>
-    </div>
-
-    <h3> inline-flex-container </h3>
-    <div class="inline-flex-container">
-        <div class="flex-item"> Lorem ipsum dolor sit amet.
-        </div>
-        <div class="flex-item"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut earum eos, explicabo iste
-          nisi non officia qui quidem sunt totam.
-        </div>
-        <div class="flex-item"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, magni.
-        </div>
-
-    </div>
-
-  </mat-tab>
-</mat-tab-group>
+</div>

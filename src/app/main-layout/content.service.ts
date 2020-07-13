@@ -21,7 +21,7 @@ export class ContentService {
       blockId: '1b', blockName: 'Bases', links: [
         {id: '1b1', name: 'Forms: Story', link: '/forms'},
         {id: 'animations', name: 'Animations', link: '/animations'},
-
+        {id: 'flexboxes', name: 'Flexbox', link: '/flex-boxes'},
       ]
     },
     {
@@ -50,7 +50,6 @@ export class ContentService {
         {id: 'parent', name: 'Parent-Child interaction', link: '/parent'},
         {id: 'directives', name: 'Directives', link: '/directives'},
         {id: 'pipes', name: 'Pipes', link: '/pipes'},
-        {id: 'flexboxes', name: 'Flex-boxes', link: '/flex-boxes'},
         {id: 'grid', name: 'Grid Layout', link: '/grid'},
 
       ]
