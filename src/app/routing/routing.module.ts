@@ -8,10 +8,10 @@ import {NotFoundPageComponent} from '../main-layout/not-found-page/not-found-pag
 import {HomePageComponent} from '../main-layout/home-page/home-page.component';
 import {DirectivesComponent} from '../directives/directives/directives.component';
 import {PipesComponent} from '../pipes/pipes.component';
-import {RxIntroComponent} from '../RxModule/rx-intro-component/rx-intro.component';
-import {HttpComponent} from '../RxModule/http/http.component';
+import {RxIntroComponent} from '../rx/rx-intro-component/rx-intro.component';
+import {HttpComponent} from '../rx/http/http.component';
 import {DemoMaterialComponent} from '../demo-material/demo-material.component';
-import {RxmoduleComponent} from '../RxModule/rxmodule.component';
+import {RxmoduleComponent} from '../rx/rxmodule.component';
 import {AnimationsComponent} from '../bases/animations/animations.component';
 import {TablesComponent} from '../demo-material/tables/tables.component';
 import {TempComponent} from '../bases/temp/temp.component';
@@ -20,6 +20,7 @@ import {FlexboxesComponent} from '../bases/flexboxes/flexboxes.component';
 import {GridComponent} from '../bases/grid/grid.component';
 import {TestAreaComponent} from '../bases/test-area/test-area.component';
 import {PlatformCdkComponent} from '../demo-material/platform-cdk/platform-cdk.component';
+import {HttpJsonplaceholderComponent} from '../rx/http-jsonplaceholder/http-jsonplaceholder.component';
 
 const appRoutes: Routes = [
   { path: 'bindings', component: BindingsComponent},
@@ -35,6 +36,7 @@ const appRoutes: Routes = [
   { path: 'rx', component: RxmoduleComponent, children: [
       { path: 'rx-intro', component: RxIntroComponent},
       { path: 'http', component: HttpComponent},
+      { path: 'http-json-placeholder', component: HttpJsonplaceholderComponent},
     ] },
   { path: 'demo-material', component: DemoMaterialComponent, children: [
       { path: 'tables', component: TablesComponent},

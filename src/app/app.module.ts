@@ -13,7 +13,7 @@ import { DirectivesModule } from './directives/directives/directives.module';
 import {GuiElementsModule} from './gui-elements/gui-elements.module';
 import { PipesComponent } from './pipes/pipes.component';
 import { TextSpoilerPipe } from './pipes/text-spoiler.pipe';
-import {RxModule} from './RxModule/rx.module';
+import {RxModule} from './rx/rx.module';
 import {ShareModule} from './share.module';
 import {DemoMaterialModule} from './demo-material/demo-material.module';
 import { LayoutModule } from '@angular/cdk/layout';

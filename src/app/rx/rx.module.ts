@@ -8,12 +8,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { RxmoduleComponent } from './rxmodule.component';
 import { RoutingModule } from '../routing/routing.module';
 import {GuiElementsModule} from '../gui-elements/gui-elements.module';
+import { HttpJsonplaceholderComponent } from './http-jsonplaceholder/http-jsonplaceholder.component';
 
 @NgModule({
   declarations: [
     RxIntroComponent,
     HttpComponent,
-    RxmoduleComponent],
+    RxmoduleComponent,
+    HttpJsonplaceholderComponent],
   exports: [RxIntroComponent, HttpComponent],
   imports: [
     CommonModule,

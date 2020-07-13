@@ -1,0 +1,48 @@
+<h1>http-jsonplaceholder: CRUD </h1>
+<p>httpAddressJPH: {{httpAddressJPH}}</p>
+<p>delayMS: {{delayMS}}</p>
+<div class="container float">
+  <div *ngIf="isLoaded; else loadingBlock" class="float">
+    <table class="float">
+      <caption>Users</caption>
+      <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>e-mail</th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let user of usersJPH">
+        <td> {{user.id}} </td>
+        <td> {{user.name}} </td>
+        <td> {{user.email}} </td>
+        <td>
+          <button (click)="userDelete(user.id)"> Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <ng-template #loadingBlock>
+    <div style="width: 400px; height: 200px;
+     background-color: #EEEEEE; margin: auto" class="float">
+      <p style="margin: 2rem">Loading...</p>
+      <div *ngIf="errorMessage; else matSpinner">
+        <p style="color: red;"> Http-error: {{errorMessage}}</p>
+      </div>
+      <ng-template #matSpinner>
+        <mat-spinner diameter="50" color="primary" style="margin: auto"></mat-spinner>
+      </ng-template>
+    </div>
+  </ng-template>
+  <form class="float" style="margin-top: 2em">
+    <fieldset>
+      <legend>Add/Update user:</legend>
+      <label for="id">Id:</label><br>
+      <input type="text" id="id" name="id" [(ngModel)]="idForm"><br>
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" [(ngModel)]="nameForm"><br>
+      <label for="email">email:</label><br>
+      <input type="email" id="email" name="email" [(ngModel)]="emailForm"><br><br>
+      <button (click)="addUpdateAction()"> Add/Update</button>
+    </fieldset>
+  </form>
+</div>
