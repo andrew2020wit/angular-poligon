@@ -22,6 +22,8 @@ export class ContentService {
         {id: 'animations', name: 'Animations', link: '/animations'},
         {id: 'flexboxes', name: 'Flexbox', link: '/flex-boxes'},
         {id: 'grid', name: 'Grid Layout', link: '/grid'},
+        {id: 'indexeddblog', name: 'IndexedDB-Log', link: '/indexed-dblog'},
+
       ]
     },
     {

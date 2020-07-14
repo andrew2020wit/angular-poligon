@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
+import {ILogItem} from '../../interfaces/ilog-item';
 
-export interface ILogItem {
+/*export interface ILogItem {
   data?: Date;
   source: string;
   message: string;
   colorBG?: string;
   id?: number;
-}
+}*/
 
 @Component({
   selector: 'app-log-box',

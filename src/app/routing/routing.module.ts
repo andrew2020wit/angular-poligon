@@ -21,6 +21,7 @@ import {GridComponent} from '../bases/grid/grid.component';
 import {TestAreaComponent} from '../bases/test-area/test-area.component';
 import {PlatformCdkComponent} from '../demo-material/platform-cdk/platform-cdk.component';
 import {HttpJsonplaceholderComponent} from '../rx/http-jsonplaceholder/http-jsonplaceholder.component';
+import {IndexedDBLogComponent} from '../bases/indexed-dblog/indexed-dblog.component';
 
 const appRoutes: Routes = [
   { path: 'bindings', component: BindingsComponent},
@@ -33,6 +34,7 @@ const appRoutes: Routes = [
   { path: 'pipes', component: PipesComponent},
   { path: 'forms', component: FormsComponent},
   { path: 'animations', component: AnimationsComponent},
+  { path: 'indexed-dblog', component: IndexedDBLogComponent},
   { path: 'rx', component: RxmoduleComponent, children: [
       { path: 'rx-intro', component: RxIntroComponent},
       { path: 'http', component: HttpComponent},

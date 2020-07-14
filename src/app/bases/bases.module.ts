@@ -13,6 +13,7 @@ import {GridComponent} from './grid/grid.component';
 import {GuiElementsModule} from '../gui-elements/gui-elements.module';
 import {CounterTestComponent} from './counter-test/counter-test.component';
 import {TestAreaComponent} from './test-area/test-area.component';
+import { IndexedDBLogComponent } from './indexed-dblog/indexed-dblog.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {TestAreaComponent} from './test-area/test-area.component';
     FlexboxesComponent,
     GridComponent,
     CounterTestComponent,
-    TestAreaComponent],
+    TestAreaComponent,
+    IndexedDBLogComponent],
   exports: [
     BindingsComponent,
     ParentComponent],

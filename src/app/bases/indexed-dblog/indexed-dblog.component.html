@@ -1,0 +1,20 @@
+<h1>IndexedDB-Log</h1>
+<div>
+  <textarea placeholder="message text" cols="50" rows="5" #htmlTextAreaElement></textarea>
+  <br>
+  <button (click)="indexedDBService.addLogMessage(
+  {source: 'IndexedDB-Log component', message: htmlTextAreaElement.value }
+  )">Save message
+  </button>
+</div>
+<button (click)="getMessages()">getMessage()</button>
+<br>
+<button (click)="indexedDBService.deleteTestIDB()">Delete IndexDataBase</button>
+<table>
+  <tr *ngIf="indexedDBService.logMessages.length > 0"> <th>data</th><th>source</th><th>message</th></tr>
+  <tr *ngFor="let mes of indexedDBService.logMessages">
+    <td>{{mes.data | date:'dd LLL yyyy :: HH:mm :: ss:SSS'}}</td>
+    <td>{{mes.source}}</td>
+    <td>{{mes.message}}</td>
+  </tr>
+</table>
