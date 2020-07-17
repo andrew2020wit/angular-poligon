@@ -6,7 +6,7 @@ import {FormsModule} from '@angular/forms';
 import { HttpComponent } from './http/http.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RxmoduleComponent } from './rxmodule.component';
-import { RoutingModule } from '../routing/routing.module';
+import { AppRoutingModule } from '../app-routing.module';
 import {GuiElementsModule} from '../gui-elements/gui-elements.module';
 import { HttpJsonplaceholderComponent } from './http-jsonplaceholder/http-jsonplaceholder.component';
 
@@ -21,7 +21,7 @@ import { HttpJsonplaceholderComponent } from './http-jsonplaceholder/http-jsonpl
     CommonModule,
     FormsModule,
     HttpClientModule,
-    RoutingModule,
+    AppRoutingModule,
     ShareModule,
     GuiElementsModule,
   ]

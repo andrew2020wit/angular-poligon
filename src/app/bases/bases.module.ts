@@ -14,6 +14,8 @@ import {GuiElementsModule} from '../gui-elements/gui-elements.module';
 import {CounterTestComponent} from './counter-test/counter-test.component';
 import {TestAreaComponent} from './test-area/test-area.component';
 import { IndexedDBLogComponent } from './indexed-dblog/indexed-dblog.component';
+import { Route2Component } from './route2/route2.component';
+import {RouterModule} from '@angular/router';
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import { IndexedDBLogComponent } from './indexed-dblog/indexed-dblog.component';
     GridComponent,
     CounterTestComponent,
     TestAreaComponent,
-    IndexedDBLogComponent],
+    IndexedDBLogComponent,
+    Route2Component],
   exports: [
     BindingsComponent,
     ParentComponent],
@@ -36,7 +39,8 @@ import { IndexedDBLogComponent } from './indexed-dblog/indexed-dblog.component';
     CommonModule,
     FormsModule,
     ShareModule,
-    GuiElementsModule
+    GuiElementsModule,
+    RouterModule
   ]
 })
 export class BasesModule {

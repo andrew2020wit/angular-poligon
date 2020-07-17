@@ -8,7 +8,7 @@ import { FormsComponent } from './forms/forms.component';
 
 import { BasesModule } from './bases/bases.module';
 import { MainLayoutModule } from './main-layout/main-layout.module';
-import { RoutingModule } from './routing/routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { DirectivesModule } from './directives/directives/directives.module';
 import {GuiElementsModule} from './gui-elements/gui-elements.module';
 import { PipesComponent } from './pipes/pipes.component';
@@ -37,7 +37,7 @@ import {MAT_DATE_LOCALE} from '@angular/material/core';
   imports: [
     BrowserModule,
     FormsModule,
-    RoutingModule,
+    AppRoutingModule,
     ReactiveFormsModule,
     BasesModule,
     GuiElementsModule,

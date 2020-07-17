@@ -52,6 +52,7 @@ export class ContentService {
         {id: 'parent', name: 'Parent-Child interaction', link: '/parent'},
         {id: 'directives', name: 'Directives', link: '/directives'},
         {id: 'pipes', name: 'Pipes', link: '/pipes'},
+        {id: 'route2', name: 'Route2', link: '/route2'},
       ]
     },
   ];

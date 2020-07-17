@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {DemoMaterialComponent} from './demo-material.component';
 import {ShareModule} from '../share.module';
 import {FormsModule} from '@angular/forms';
-import {RoutingModule} from '../routing/routing.module';
+import {AppRoutingModule} from '../app-routing.module';
 import {TablesComponent} from './tables/tables.component';
 import { PlatformCdkComponent } from './platform-cdk/platform-cdk.component';
 
@@ -14,7 +14,7 @@ import { PlatformCdkComponent } from './platform-cdk/platform-cdk.component';
     CommonModule,
     FormsModule,
     ShareModule,
-    RoutingModule,
+    AppRoutingModule,
   ],
   exports: [DemoMaterialComponent]
 })

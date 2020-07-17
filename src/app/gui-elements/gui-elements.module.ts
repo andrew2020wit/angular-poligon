@@ -4,7 +4,7 @@ import {ShareModule} from '../share.module';
 
 import { GuiTestAreaComponent } from './gui-test-area/gui-test-area.component';
 import { LogBoxComponent } from './log-box/log-box.component';
-import {RoutingModule} from '../routing/routing.module';
+import {AppRoutingModule} from '../app-routing.module';
 import {FormsModule} from '@angular/forms';
 import { BoxPhComponent } from './box-ph/box-ph.component';
 
@@ -15,7 +15,7 @@ import { BoxPhComponent } from './box-ph/box-ph.component';
   imports: [
     CommonModule,
     ShareModule,
-    RoutingModule,
+    AppRoutingModule,
     FormsModule,
   ],
     exports: [
