@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {IndexedDBService} from '../../indexed-db.service';
+import {IndexedDBService} from '../../services/indexed-db.service';
 
 @Component({
   selector: 'app-indexed-dblog',

@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {ContentService} from './main-layout/content.service';
+import {ContentService} from './services/content.service';
 import {MatAccordion} from '@angular/material/expansion';
 
 @Component({
