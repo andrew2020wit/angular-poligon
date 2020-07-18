@@ -16,6 +16,7 @@ import {TestAreaComponent} from './test-area/test-area.component';
 import { IndexedDBLogComponent } from './indexed-dblog/indexed-dblog.component';
 import { Route2Component } from './route2/route2.component';
 import {RouterModule} from '@angular/router';
+import { SecretComponent } from './secret/secret.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import {RouterModule} from '@angular/router';
     CounterTestComponent,
     TestAreaComponent,
     IndexedDBLogComponent,
-    Route2Component],
+    Route2Component,
+    SecretComponent],
   exports: [
     BindingsComponent,
     ParentComponent],

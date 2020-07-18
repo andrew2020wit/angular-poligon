@@ -1,10 +1,34 @@
 <p>route2 works!</p>
 
-<p> router parameter: {{ routerParam }} </p>
+<p> router parameter id: <b>{{ routerParam }}</b> </p>
+<p> queryParams, query1s <b>{{query1s}} </b></p>
+<p> queryParams, query2n <b>{{query2n}} </b></p>
 
 <ol>
   <li><a [routerLink]="['/route2/id', '5']">router id 5</a></li>
   <li><a [routerLink]="['/route2/id', '20']">router id 20</a></li>
-
+  <li><a [routerLink]="['/route2/id', '8']" [queryParams]="{'query1s':'query1V', 'query2n':100}">router id 8
+      query1s':'query1V', 'query2n':100
+    </a>
+  </li>
+  <li><a [routerLink]="['/route2/id', '9']" [queryParams]="{'query1s':'ASDFGT', 'query2n':345}">router id 9
+      query1s':'ASDFGT', 'query2n':345
+    </a>
+  </li>
 </ol>
 
+<h2>router.navigate</h2>
+
+  <div  class="form-group">
+      <h3>Go parameters</h3>
+
+      <label>goLink.id</label><br/>
+      <input type="number" [(ngModel)]="goLink.id"  placeholder="goLink.id"/><br />
+      <label>goLink.query1s</label><br/>
+      <input type="text" [(ngModel)]="goLink.query1s" placeholder="Цена" /><br />
+      <label>goLink.query2n</label><br/>
+      <input type="number" [(ngModel)]="goLink.query2n"  placeholder="goLink.query2n"/><br />
+
+      <button (click)="goTo()">goTo</button>
+
+  </div>
