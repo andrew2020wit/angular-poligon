@@ -21,7 +21,7 @@ import { TempComponent } from './bases/temp/temp.component';
 import { GuiTestAreaComponent } from './gui-elements/gui-test-area/gui-test-area.component';
 import { FlexboxesComponent } from './bases/flexboxes/flexboxes.component';
 import { GridComponent } from './bases/grid/grid.component';
-import { TestAreaComponent } from './bases/test-area/test-area.component';
+import { TestAreaComponent } from './testing-module/test-area/test-area.component';
 import { PlatformCdkComponent } from './demo-material/platform-cdk/platform-cdk.component';
 import { HttpJsonplaceholderComponent } from './rx/http-jsonplaceholder/http-jsonplaceholder.component';
 import { IndexedDBLogComponent } from './bases/indexed-dblog/indexed-dblog.component';

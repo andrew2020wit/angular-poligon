@@ -10,30 +10,24 @@ import { BasesModule } from './bases/bases.module';
 import { MainLayoutModule } from './main-layout/main-layout.module';
 import { AppRoutingModule } from './app-routing.module';
 import { DirectivesModule } from './directives/directives/directives.module';
-import {GuiElementsModule} from './gui-elements/gui-elements.module';
+import { GuiElementsModule } from './gui-elements/gui-elements.module';
+import { TestingModule } from './testing-module/testing.module';
+
 import { PipesComponent } from './pipes/pipes.component';
 import { TextSpoilerPipe } from './pipes/text-spoiler.pipe';
-import {RxModule} from './rx/rx.module';
-import {ShareModule} from './share.module';
-import {DemoMaterialModule} from './demo-material/demo-material.module';
+import { RxModule } from './rx/rx.module';
+import { ShareModule } from './share.module';
+import { DemoMaterialModule } from './demo-material/demo-material.module';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import {MAT_DATE_LOCALE} from '@angular/material/core';
-
-
-
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FormsComponent,
-    PipesComponent,
-    TextSpoilerPipe,
-  ],
+  declarations: [AppComponent, FormsComponent, PipesComponent, TextSpoilerPipe],
   imports: [
     BrowserModule,
     FormsModule,
@@ -51,9 +45,10 @@ import {MAT_DATE_LOCALE} from '@angular/material/core';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    TestingModule,
   ],
-  providers: [{provide: MAT_DATE_LOCALE, useValue: 'ru-ru'}],
-  bootstrap: [AppComponent]
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'ru-ru' }],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
