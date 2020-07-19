@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ILogItem } from '../interfaces/ilog-item';
-
 /*Demo IndexedDB*/
-
 @Injectable({
   providedIn: 'root',
 })

@@ -4,7 +4,6 @@ import { SecretComponent } from './bases/secret/secret.component';
 import { Route2Component } from './bases/route2/route2.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { BindingsComponent } from './bases/bindings/bindings.component';
 import { FormsComponent } from './forms/forms.component';
 import { ParentComponent } from './bases/parent/parent.component';
@@ -41,7 +40,12 @@ const appRoutes: Routes = [
   { path: 'indexed-dblog', component: IndexedDBLogComponent },
   { path: 'route2/id/:id', component: Route2Component },
   { path: 'route2', component: Route2Component },
-  { path: 'secret', component: SecretComponent, canActivate: [SecretGuard], canDeactivate: [ExitSecretGuard] },
+  {
+    path: 'secret',
+    component: SecretComponent,
+    canActivate: [SecretGuard],
+    canDeactivate: [ExitSecretGuard],
+  },
   {
     path: 'rx',
     component: RxmoduleComponent,

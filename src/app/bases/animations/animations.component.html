@@ -5,40 +5,28 @@
       <p><button mat-button color="primary" (click)="setRedState()"> setRedState() </button></p>
       <p><button mat-button color="primary" (click)="setBigGreenState()"> setBigGreenState() </button></p>
       <p><button mat-button color="primary" (click)="curState = 'borderRadius'">
-        curState = 'borderRadius-0.5'
-      </button></p>
-
-      <mat-slide-toggle [checked]="ngForStat" (change)="ngForChange()" color="primary"> *ngFor Animations </mat-slide-toggle>
-
+          curState = 'borderRadius-0.5'
+        </button></p>
+      <mat-slide-toggle [checked]="ngForStat" (change)="ngForChange()" color="primary"> *ngFor Animations
+      </mat-slide-toggle>
       <p><button mat-button color="primary" (click)="ngIfStat = !ngIfStat"> ngIfStat = !ngIfStat </button></p>
-
-
     </td>
     <td>
-
-      <div class="test-div" >
+      <div class="test-div">
         <div [@trigger1]="curState">
           <app-box-ph> Test Box: {{curState}} </app-box-ph>
         </div>
-
         <div style="width: 100px; height: 100px; margin-top: 100px" [@trigger1]="curState">
-
         </div>
-
-        <div style="margin-top: 100px" >
+        <div style="margin-top: 100px">
           <ul>
             <li *ngFor="let item of arr" [@trigger1]="curState"> Lorem ipsum dolor sit amet. #{{item}}</li>
           </ul>
         </div>
-
         <div *ngIf="ngIfStat" style="margin-top: 100px" [@trigger1]="curState">
-          <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, vero!</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, vero!</p>
         </div>
-
       </div>
-
-
-
     </td>
   </tr>
 </table>

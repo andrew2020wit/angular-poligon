@@ -1,21 +1,19 @@
-
-
 <h1> Simple examples about bindings </h1>
 
 <h2>Interpolation</h2>
-<p>massage1: {{massage1}}</p> <!--"Showing component properties with interpolation" -->
+<p>massage1: {{massage1}}</p>
+<!--"Showing component properties with interpolation" -->
 <p>simple calculations: 2+2 = {{2+2}}</p>
 
 <h2>Property binding</h2>
-<button [disabled] = "isDisabled"> button disabled </button>
+<button [disabled]="isDisabled"> button disabled </button>
 
 <h2>Class binding </h2>
 <p [class.red-color]="true">class.red-color true </p>
 <p [class.red-color]="false">class.red-color false</p>
 
 <h2>Style binding</h2>
-<div [style.width.px]="300"
-     [style.background-color]="backgroundColor">
+<div [style.width.px]="300" [style.background-color]="backgroundColor">
   [style.width.px]="100" Lorem ipsum dolor sit amet, consectetur adipisicing elit.
   Debitis deleniti eaque eius facilis natus quam quasi repellendus rerum vel velit.
 </div>
@@ -34,5 +32,3 @@
     id: {{name.id}} - name: {{name.name}}
   </li>
 </ul>
-
-

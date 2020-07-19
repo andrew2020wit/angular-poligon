@@ -1,60 +1,47 @@
 <!--header-->
 <mat-toolbar color="primary">
-
-    <button mat-button (click)="menuOn=!menuOn" color="accent"> <mat-icon>view_sidebar</mat-icon>Menu </button>
-    <h1 class="mat-h1">AngularPoligon</h1>
-    <span style="flex: 1 1 auto;"></span>
-    <a routerLink="/"><button mat-button color="accent"> <mat-icon>home</mat-icon> Go to home </button></a>
-
+  <button mat-button (click)="menuOn=!menuOn" color="accent">
+    <mat-icon>view_sidebar</mat-icon>Menu
+  </button>
+  <h1 class="mat-h1">AngularPoligon</h1>
+  <span style="flex: 1 1 auto;"></span>
+  <a routerLink="/"><button mat-button color="accent">
+      <mat-icon>home</mat-icon> Go to home
+    </button></a>
 </mat-toolbar>
-
 <!--sidebar&main-->
 <mat-sidenav-container>
-
-<!--  sidebar-->
+  <!--  sidebar-->
   <mat-sidenav mode="side" [opened]="menuOn" class="mat-sidenav-container">
-<!--    <app-sidenav></app-sidenav>-->
-
+    <!--    <app-sidenav></app-sidenav>-->
     <div class="example-action-buttons">
       <button mat-button (click)="accordion.openAll()">Expand All</button>
       <button mat-button (click)="accordion.closeAll()">Collapse All</button>
     </div>
     <mat-accordion multi="true">
-
       <mat-expansion-panel *ngFor=" let block of contentService.blockPages">
-
         <mat-expansion-panel-header>
           <h2>{{block.blockName}}</h2>
         </mat-expansion-panel-header>
-
         <mat-nav-list>
-          <a mat-list-item
-             *ngFor="let link of block.links"
-             routerLink ="{{link.link}}"
-            routerLinkActive="active-link"
-          >
+          <a mat-list-item *ngFor="let link of block.links" routerLink="{{link.link}}" routerLinkActive="active-link">
             {{ link.name }}
           </a>
         </mat-nav-list>
-
       </mat-expansion-panel>
-
     </mat-accordion>
-
   </mat-sidenav>
-
-<!--  main-->
+  <!--  main-->
   <mat-sidenav-content>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
-
 </mat-sidenav-container>
-
 <!--footer-->
 <mat-toolbar color="primary">
   <button mat-button (click)="menuOn=!menuOn" color="accent"> Menu </button>
   <div>Test-demo angular project.</div>
   <span style="flex: 1 1 auto;"></span>
-  <a routerLink="/"><button mat-button color="accent"> <mat-icon>home</mat-icon> Go to home </button></a>
-
+  <a routerLink="/"><button mat-button color="accent">
+      <mat-icon>home</mat-icon> Go to home
+    </button></a>
 </mat-toolbar>
