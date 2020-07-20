@@ -1,0 +1,8 @@
+<p>counter-test-bed works!</p>
+
+<p id="counterView" [class.green]="counter %2 === 0">
+  counter: {{counter}}
+</p>
+
+<button id="increment" (click)="increment()">increment()</button>
+<button (click)="decrement()">decrement()</button>
