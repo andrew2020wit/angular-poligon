@@ -1,3 +1,4 @@
+import { Ngrx1Component } from './bases/ngrx1/ngrx1.component';
 import { ExitSecretGuard } from './bases/secret/exit-secret.guard';
 import { SecretGuard } from './bases/secret/secret.guard';
 import { SecretComponent } from './bases/secret/secret.component';
@@ -40,6 +41,7 @@ const appRoutes: Routes = [
   { path: 'indexed-dblog', component: IndexedDBLogComponent },
   { path: 'route2/id/:id', component: Route2Component },
   { path: 'route2', component: Route2Component },
+  { path: 'ngrx1', component: Ngrx1Component },
   {
     path: 'secret',
     component: SecretComponent,

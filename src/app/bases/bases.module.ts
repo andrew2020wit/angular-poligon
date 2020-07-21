@@ -15,6 +15,7 @@ import { IndexedDBLogComponent } from './indexed-dblog/indexed-dblog.component';
 import { Route2Component } from './route2/route2.component';
 import { RouterModule } from '@angular/router';
 import { SecretComponent } from './secret/secret.component';
+import { Ngrx1Component } from './ngrx1/ngrx1.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SecretComponent } from './secret/secret.component';
     IndexedDBLogComponent,
     Route2Component,
     SecretComponent,
+    Ngrx1Component,
   ],
   exports: [BindingsComponent, ParentComponent],
   imports: [
