@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DirectivesModule } from './directives/directives/directives.module';
 import { GuiElementsModule } from './gui-elements/gui-elements.module';
 import { TestingModule } from './testing-module/testing.module';
+import { Ngrx1Module } from './ngrx1/ngrx1.module';
 
 import { PipesComponent } from './pipes/pipes.component';
 import { TextSpoilerPipe } from './pipes/text-spoiler.pipe';
@@ -30,7 +31,6 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { counterReducer } from './ngrx-store/counter.reducer';
 
 @NgModule({
   declarations: [AppComponent, FormsComponent, PipesComponent, TextSpoilerPipe],
@@ -52,8 +52,9 @@ import { counterReducer } from './ngrx-store/counter.reducer';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    Ngrx1Module,
     TestingModule,
-    StoreModule.forRoot({ count: counterReducer }, {}),
+    StoreModule.forRoot({}, {}),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,

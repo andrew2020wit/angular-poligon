@@ -1,4 +1,4 @@
-import { Ngrx1Component } from './bases/ngrx1/ngrx1.component';
+import { Ngrx1Component } from './ngrx1/ngrx1.component';
 import { ExitSecretGuard } from './bases/secret/exit-secret.guard';
 import { SecretGuard } from './bases/secret/secret.guard';
 import { SecretComponent } from './bases/secret/secret.component';
