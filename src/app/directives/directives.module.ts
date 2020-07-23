@@ -1,15 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {DirectivesComponent} from './directives.component';
-import {CrazyStyleDirective} from '../crazy-style.directive';
-
-
+import { DirectivesComponent } from './directives/directives.component';
+import { CrazyStyleDirective } from './crazy-style.directive';
 
 @NgModule({
   declarations: [DirectivesComponent, CrazyStyleDirective],
   exports: [DirectivesComponent, CrazyStyleDirective],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule],
 })
-export class DirectivesModule { }
+export class DirectivesModule {}

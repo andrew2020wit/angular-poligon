@@ -9,7 +9,7 @@ import { FormsComponent } from './forms/forms.component';
 import { BasesModule } from './bases/bases.module';
 import { MainLayoutModule } from './main-layout/main-layout.module';
 import { AppRoutingModule } from './app-routing.module';
-import { DirectivesModule } from './directives/directives/directives.module';
+import { DirectivesModule } from './directives/directives.module';
 import { GuiElementsModule } from './gui-elements/gui-elements.module';
 import { TestingModule } from './testing-module/testing.module';
 import { Ngrx1Module } from './ngrx1/ngrx1.module';
