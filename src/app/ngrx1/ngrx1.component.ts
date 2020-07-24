@@ -1,11 +1,7 @@
 import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import {
-  increment,
-  decrement,
-  reset,
-} from './ngrx-store/counter/counter.actions';
+import * as NumberVActions from './ngrx-store/numberV/numberV.actions';
 
 @Component({
   selector: 'app-ngrx1',
@@ -13,21 +9,14 @@ import {
   styleUrls: ['./ngrx1.component.scss'],
 })
 export class Ngrx1Component {
-  count$: Observable<number>;
-
-  constructor(private store: Store<{ count: number }>) {
-    this.count$ = store.pipe(select('count'));
+  numberV$: Observable<number>;
+  constructor(private store: Store<{ numberV: number }>) {
+    this.numberV$ = store.pipe(select('numberV'));
   }
-
-  increment() {
-    this.store.dispatch(increment());
+  AddNumberV(deltaX) {
+    this.store.dispatch(NumberVActions.numberVAddAction({ delta: deltaX }));
   }
-
-  decrement() {
-    this.store.dispatch(decrement());
-  }
-
-  reset() {
-    this.store.dispatch(reset());
+  ReserNumberV() {
+    this.store.dispatch(NumberVActions.numberVReserAction());
   }
 }

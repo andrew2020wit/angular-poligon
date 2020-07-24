@@ -1,9 +1,5 @@
-<h1>ngrx1: counter </h1>
+<h1>ngrx1-view </h1>
+<p>numberV$: {{numberV$ | async}}</p>
 
-<div>Current Count: {{ count$ | async }}</div>
-
-<p><button id="increment" (click)="increment()">Increment</button></p>
-<p><button id="decrement" (click)="decrement()">Decrement</button></p>
-<p><button id="reset" (click)="reset()">Reset Counter</button></p>
-
-<p> <a href="https://ngrx.io/guide/store">https://ngrx.io/guide/store</a></p>
+<button (click)="AddNumberV(10)">Add 10 to numerV Store</button>
+<button (click)="ReserNumberV()">Reset numerV Store</button>

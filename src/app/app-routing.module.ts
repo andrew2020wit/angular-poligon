@@ -26,6 +26,7 @@ import { TestAreaComponent } from './testing-module/test-area/test-area.componen
 import { PlatformCdkComponent } from './demo-material/platform-cdk/platform-cdk.component';
 import { HttpJsonplaceholderComponent } from './rx/http-jsonplaceholder/http-jsonplaceholder.component';
 import { IndexedDBLogComponent } from './bases/indexed-dblog/indexed-dblog.component';
+// import { UsersArticlesComponent } from './ngrx1/users-articles/users-articles.component';
 
 const appRoutes: Routes = [
   { path: 'bindings', component: BindingsComponent },
@@ -42,6 +43,7 @@ const appRoutes: Routes = [
   { path: 'route2/id/:id', component: Route2Component },
   { path: 'route2', component: Route2Component },
   { path: 'ngrx1', component: Ngrx1Component },
+  // { path: 'ngrx-users-articles', component: UsersArticlesComponent },
   {
     path: 'secret',
     component: SecretComponent,

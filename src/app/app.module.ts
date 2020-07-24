@@ -31,6 +31,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
+// import { reducers } from './ngrx1/ngrx-store/index';
+import * as numberVReducer from './ngrx1/ngrx-store/numberV/number.reducer';
 
 @NgModule({
   declarations: [AppComponent, FormsComponent, PipesComponent, TextSpoilerPipe],
@@ -54,12 +56,12 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
     MatListModule,
     Ngrx1Module,
     TestingModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({ numberV: numberVReducer.reducer }),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
     }),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot(),
     StoreRouterConnectingModule.forRoot(),
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'ru-ru' }],

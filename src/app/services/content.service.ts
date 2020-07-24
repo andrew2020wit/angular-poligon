@@ -22,6 +22,11 @@ export class ContentService {
         { id: 'grid', name: 'Grid Layout', link: '/grid' },
         { id: 'indexeddblog', name: 'IndexedDB-Log', link: '/indexed-dblog' },
         { id: 'ngrx1', name: 'ngrx1', link: '/ngrx1' },
+        /*         {
+          id: 'ngrxusersarticles',
+          name: 'ngrx-users-articles',
+          link: '/ngrx-users-articles',
+        }, */
       ],
     },
     {
