@@ -20,11 +20,9 @@ export class Ngrx1Component {
     this.store.dispatch(NumberVActions.numberVReserAction());
   }
   setUser() {
-    this.store.dispatch(
-      UsersAction.userSet({ user: { userId: 1, name: 'Bob', count: 12 } })
-    );
+    this.store.dispatch(UsersAction.getUsers());
   }
   resetUser() {
-    this.store.dispatch(UsersAction.userReset());
+    this.store.dispatch(UsersAction.deleteUsers());
   }
 }

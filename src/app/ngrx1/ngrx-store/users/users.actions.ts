@@ -1,7 +1,4 @@
 import { createAction, props } from '@ngrx/store';
-import { IUsers } from './iusers';
-export const userSet = createAction(
-  '[Users] userSet',
-  props<{ user: IUsers }>()
-);
-export const userReset = createAction('[User] userReset');
+import { IUsers } from './iuser';
+export const getUsers = createAction('[Users] getUser');
+export const deleteUsers = createAction('[Users] deleteUsers');

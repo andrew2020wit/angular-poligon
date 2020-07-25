@@ -1,5 +1,4 @@
 export interface IUsers {
-  userId: number;
+  id: number;
   name: string;
-  count: number;
 }

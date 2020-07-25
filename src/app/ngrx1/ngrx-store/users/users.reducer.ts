@@ -1,14 +1,24 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import * as UsersAction from './users.actions';
-import { IUsers } from './iusers';
-
-export const initialState: IUsers = { userId: 0, name: 'noName', count: 0 };
-const _usersReducer = createReducer(
+import { IUsers } from './iuser';
+export interface State {
+  users: IUsers[];
+}
+export const initialState: State = { users: [{ id: 0, name: 'noName' }] };
+const _reducer = createReducer(
   initialState,
-  on(UsersAction.userReset, () => initialState),
-  on(UsersAction.userSet, (_, { user }) => user)
+  on(UsersAction.deleteUsers, () => initialState),
+  on(UsersAction.getUsers, () => {
+    const st: State = {
+      users: [
+        { id: 1, name: 'Bob' },
+        { id: 2, name: 'Jon' },
+      ],
+    };
+    return st;
+  })
 );
 
-export function usersReducer(state: IUsers | undefined, action: Action) {
-  return _usersReducer(state, action);
+export function reducer(state: State | undefined, action: Action) {
+  return _reducer(state, action);
 }
