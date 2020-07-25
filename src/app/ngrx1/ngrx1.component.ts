@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import * as NumberVActions from './ngrx-store/numberV/numberV.actions';
-
+import * as UsersAction from './ngrx-store/users/users.actions';
 @Component({
   selector: 'app-ngrx1',
   templateUrl: './ngrx1.component.html',
@@ -13,10 +13,18 @@ export class Ngrx1Component {
   constructor(private store: Store<{ numberV: number }>) {
     this.numberV$ = store.pipe(select('numberV'));
   }
-  AddNumberV(deltaX) {
-    this.store.dispatch(NumberVActions.numberVAddAction({ delta: deltaX }));
+  AddNumberV(delta) {
+    this.store.dispatch(NumberVActions.numberVAddAction({ delta }));
   }
   ReserNumberV() {
     this.store.dispatch(NumberVActions.numberVReserAction());
+  }
+  setUser() {
+    this.store.dispatch(
+      UsersAction.userSet({ user: { userId: 1, name: 'Bob', count: 12 } })
+    );
+  }
+  resetUser() {
+    this.store.dispatch(UsersAction.userReset());
   }
 }

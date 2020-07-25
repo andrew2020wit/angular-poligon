@@ -27,6 +27,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
 const SharedModules = [BrowserAnimationsModule];
+const NgrxStore = [];
 const MaterialModules = [
   DragDropModule,
   LayoutModule,
@@ -56,7 +57,7 @@ const MaterialModules = [
 ];
 
 @NgModule({
-  imports: [...MaterialModules, ...SharedModules],
+  imports: [...MaterialModules, ...SharedModules, ...NgrxStore],
   exports: MaterialModules,
 })
 export class ShareModule {}
