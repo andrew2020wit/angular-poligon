@@ -1,5 +1,5 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import * as ArticlesAction from './articles.actions';
+import * as ArticlesAction from '@@ngrxStore/articles/articles.actions';
 import { IArticle } from './iarticle';
 
 export interface State {
@@ -17,6 +17,10 @@ const _reducer = createReducer(
       articles: [
         { id: 1, user_id: 1, title: 'title1' },
         { id: 2, user_id: 2, title: 'title2' },
+        { id: 3, user_id: 1, title: 'title3' },
+        { id: 4, user_id: 1, title: 'title4' },
+        { id: 5, user_id: 2, title: 'title5' },
+        { id: 6, user_id: 3, title: 'title6' },
       ],
     };
     return st;
