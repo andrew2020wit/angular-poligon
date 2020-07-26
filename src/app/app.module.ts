@@ -31,8 +31,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { reducers } from './ngrx1/ngrx-store/index';
-import * as numberVReducer from './ngrx1/ngrx-store/numberV/numberV.reducer';
+import { reducers } from '@@ngrxStore/index';
+import { metaReducers } from '@@app/ngrx1/ngrx-store/metaReducers/metaReducers';
 
 @NgModule({
   declarations: [AppComponent, FormsComponent, PipesComponent, TextSpoilerPipe],
@@ -56,7 +56,7 @@ import * as numberVReducer from './ngrx1/ngrx-store/numberV/numberV.reducer';
     MatListModule,
     Ngrx1Module,
     TestingModule,
-    StoreModule.forRoot(reducers),
+    StoreModule.forRoot(reducers, { metaReducers }),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
