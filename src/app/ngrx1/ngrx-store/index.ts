@@ -5,6 +5,11 @@ import * as NumberVReducer from './numberV/numberV.reducer';
 import * as ArticlesReducer from './articles/articles.reducer';
 import * as UsersReducer from './users/users.reducer';
 import * as JPHReducer from './JPH/JPH.reducer';
+import {
+  DEFAULT_ROUTER_FEATURENAME,
+  routerReducer,
+  RouterReducerState,
+} from '@ngrx/router-store';
 
 // import * as ArticlesReducer from './articles/articles.reducer';
 export interface State {
@@ -12,6 +17,7 @@ export interface State {
   articles: ArticlesReducer.State;
   users: UsersReducer.State;
   JPH: JPHReducer.State;
+  [DEFAULT_ROUTER_FEATURENAME]: RouterReducerState;
 }
 
 export const reducers: ActionReducerMap<State> = {
@@ -19,6 +25,7 @@ export const reducers: ActionReducerMap<State> = {
   articles: ArticlesReducer.reducer,
   users: UsersReducer.reducer,
   JPH: JPHReducer.reducer,
+  [DEFAULT_ROUTER_FEATURENAME]: routerReducer,
 };
 
 export const selectNumberVState = (state: State) => state.numberV;
