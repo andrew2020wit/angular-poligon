@@ -1,13 +1,11 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import * as NumberVActions from './numberV.actions';
-// import { createSelector } from '@ngrx/store';
 
 export interface State {
   numberV: number;
 }
 
 export const initialState: State = { numberV: 0 };
-//export interface numberState: number;
 
 const _reducer = createReducer(
   initialState,
@@ -21,5 +19,3 @@ const _reducer = createReducer(
 export function reducer(state: State | undefined, action: Action) {
   return _reducer(state, action);
 }
-
-//export const selectNumberV = (state: State) => state.numberV;

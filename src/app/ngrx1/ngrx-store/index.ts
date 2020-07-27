@@ -4,18 +4,21 @@ import { createSelector } from '@ngrx/store';
 import * as NumberVReducer from './numberV/numberV.reducer';
 import * as ArticlesReducer from './articles/articles.reducer';
 import * as UsersReducer from './users/users.reducer';
+import * as JPHReducer from './JPH/JPH.reducer';
 
 // import * as ArticlesReducer from './articles/articles.reducer';
 export interface State {
   numberV: NumberVReducer.State;
   articles: ArticlesReducer.State;
   users: UsersReducer.State;
+  JPH: JPHReducer.State;
 }
 
 export const reducers: ActionReducerMap<State> = {
   numberV: NumberVReducer.reducer,
   articles: ArticlesReducer.reducer,
   users: UsersReducer.reducer,
+  JPH: JPHReducer.reducer,
 };
 
 export const selectNumberVState = (state: State) => state.numberV;

@@ -6,17 +6,21 @@
 
 <h2>Users</h2>
 <ul>
-  <li *ngFor="let user of (users$ |async) " (click)="selectArticlesByIserId(user.id)">
+  <li *ngFor="let user of (users$ |async) " (click)="selectArticlesByUserId(user.id)">
     <button>{{user.name}}</button>
   </li>
 </ul>
 <p>Users</p>
 <button (click)="getUser()">SetUser</button>
 <button (click)="resetUser()">resetUser</button>
-
 <ul>
   <p>Articles</p>
   <li *ngFor="let article of (articles$ |async) ">{{article.title}}</li>
 </ul>
+<button (click)="selectArticlesByUserId(1)">test</button>
 
-<button (click)="selectArticlesByIserId(1)">test</button>
+<!--<h2>JsonPlaceholder Users</h2>-->
+
+<!--<ul>-->
+<!--  <li *ngFor="let user of (usersJPH$ | async)"> usersJPH: {{user.name}} </li>-->
+<!--</ul>-->

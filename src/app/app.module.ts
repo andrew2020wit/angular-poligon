@@ -33,6 +33,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { reducers } from '@@ngrxStore/index';
 import { metaReducers } from '@@app/ngrx1/ngrx-store/metaReducers/metaReducers';
+import { JPHEffects } from '@@ngrxStore/JPH/JPH.effects';
 
 @NgModule({
   declarations: [AppComponent, FormsComponent, PipesComponent, TextSpoilerPipe],
@@ -56,12 +57,18 @@ import { metaReducers } from '@@app/ngrx1/ngrx-store/metaReducers/metaReducers';
     MatListModule,
     Ngrx1Module,
     TestingModule,
-    StoreModule.forRoot(reducers, { metaReducers }),
+    StoreModule.forRoot(reducers, {
+      metaReducers,
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true,
+      },
+    }),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
     }),
-    EffectsModule.forRoot(),
+    EffectsModule.forRoot([JPHEffects]),
     StoreRouterConnectingModule.forRoot(),
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'ru-ru' }],

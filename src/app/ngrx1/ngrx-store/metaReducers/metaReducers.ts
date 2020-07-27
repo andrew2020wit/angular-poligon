@@ -1,10 +1,10 @@
 import { ActionReducer, MetaReducer } from '@ngrx/store';
 
-const ngrxLogOn = false;
+const ngrxLogOn = true;
 
 // console.log all actions
 export function ngrxLog(reducer: ActionReducer<any>): ActionReducer<any> {
-  return function (state, action) {
+  return (state, action) => {
     if (ngrxLogOn) {
       console.log('MetaReducer:ngrxLog:state', state);
       console.log('MetaReducer:ngrxLog:action', action);
