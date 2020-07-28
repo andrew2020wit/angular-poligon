@@ -3,10 +3,10 @@
   "compilerOptions": {
     "outDir": "./out-tsc/app",
     "types": [],
-    "baseUrl": "src",
+    "baseUrl": "src/",
     "paths": {
-      "@@app/*": ["app/*"],
-      "@@ngrxStore/*": ["app/ngrx1/ngrx-store/*"]
+      "@app/*": ["app/*"],
+      "@ngrxStore/*": ["app/ngrx1/ngrx-store/*"]
     }
   },
   "files": ["src/main.ts", "src/polyfills.ts"],

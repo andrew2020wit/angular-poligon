@@ -1,8 +1,8 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import * as UsersAction from './users.actions';
-import { IUsers } from './iuser';
+import { IUser } from '@app/interfaces/IUser';
 export interface State {
-  users: IUsers[];
+  users: IUser[];
 }
 export const initialState: State = { users: [{ id: 0, name: 'noNameUser' }] };
 const _reducer = createReducer(

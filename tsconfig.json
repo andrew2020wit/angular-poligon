@@ -13,10 +13,5 @@
     {
       "path": "./tsconfig.spec.json"
     }
-  ],
-//  "compilerOptions": {
-//    "paths": {
-//      "@@app/*": ["app/*"],
-//      "@@ngrxStore/*": ["app/ngrx1/ngrx-store/*"]
-//    }
+  ]
 }

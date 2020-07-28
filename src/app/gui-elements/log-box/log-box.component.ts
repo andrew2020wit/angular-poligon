@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
-import {ILogItem} from '../../interfaces/ilog-item';
+import { MatTableDataSource } from '@angular/material/table';
+import { ILogItem } from '../../interfaces/ILogItem';
 
 /*export interface ILogItem {
   data?: Date;
@@ -13,36 +13,34 @@ import {ILogItem} from '../../interfaces/ilog-item';
 @Component({
   selector: 'app-log-box',
   templateUrl: './log-box.component.html',
-  styleUrls: ['./log-box.component.scss']
+  styleUrls: ['./log-box.component.scss'],
 })
 export class LogBoxComponent implements OnInit {
-
   displayedColumns: string[] = ['id', 'data', 'source', 'message'];
   data: ILogItem[] = [];
   dataSource = new MatTableDataSource(this.data);
 
-  constructor() {
-  }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
 
-  }
-
-
-  public add(newItem: ILogItem){
-
+  public add(newItem: ILogItem) {
     // console.log('add');
 
     newItem.id = this.data.length;
 
-    if (!newItem.data) { newItem.data = new Date(); }
-    if (!newItem.colorBG) { newItem.colorBG = '#eee';}
+    if (!newItem.data) {
+      newItem.data = new Date();
+    }
+    if (!newItem.colorBG) {
+      newItem.colorBG = '#eee';
+    }
 
     this.data.push(newItem);
     this.dataSource.data = this.data;
   }
 
-  clearLogs(){
+  clearLogs() {
     this.data = [];
     this.dataSource.data = this.data;
   }
@@ -52,7 +50,7 @@ export class LogBoxComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  testAdd(){
+  testAdd() {
     // console.log('testAdd');
     this.add({
       source: 'LogBox',

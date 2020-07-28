@@ -1,6 +1,6 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import * as ArticlesAction from '@@ngrxStore/articles/articles.actions';
-import { IArticle } from './iarticle';
+import * as ArticlesAction from '@ngrxStore/articles/articles.actions';
+import { IArticle } from '@app/interfaces/IArticle';
 
 export interface State {
   articles: IArticle[];

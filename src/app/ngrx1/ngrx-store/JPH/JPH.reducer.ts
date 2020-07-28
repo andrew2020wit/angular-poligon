@@ -1,9 +1,9 @@
-import { IUserJPH } from './IUserJPH';
+import { IUser } from '@app/interfaces/IUser';
 import { Action, createReducer, on } from '@ngrx/store';
 import * as JPHActions from './JPH.actions';
 
 export interface State {
-  usersJPH: IUserJPH[];
+  usersJPH: IUser[];
 }
 export const initialState: State = {
   usersJPH: [],

@@ -1,4 +1,4 @@
-import { IArticle } from './articles/iarticle';
+import { IArticle } from '@app/interfaces/IArticle';
 import { Action, ActionReducerMap, props } from '@ngrx/store';
 import { createSelector } from '@ngrx/store';
 import * as NumberVReducer from './numberV/numberV.reducer';

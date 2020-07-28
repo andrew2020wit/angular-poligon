@@ -1,13 +1,12 @@
-import { JsonPlaceholderService } from './../services/json-placeholder.service';
-import { IUserJPH } from '@@ngrxStore/JPH/IUserJPH';
+import { HttpMockService } from '@app/services/HttpMock/HttpMock.service';
+import { IUser } from '@app/interfaces/IUser';
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import * as ArticlesAction from '@@ngrxStore/articles/articles.actions';
+import * as ArticlesAction from '@ngrxStore/articles/articles.actions';
 import * as NumberVActions from './ngrx-store/numberV/numberV.actions';
 import * as UsersAction from './ngrx-store/users/users.actions';
-import { IUsers } from '@@ngrxStore/users/iuser';
-import { IArticle } from '@@ngrxStore/articles/iarticle';
+import { IArticle } from '@app/interfaces/IArticle';
 import * as rootReducer from './ngrx-store/index';
 
 @Component({
@@ -17,12 +16,12 @@ import * as rootReducer from './ngrx-store/index';
 })
 export class Ngrx1Component implements OnInit {
   numberV$: Observable<number>;
-  users$: Observable<IUsers[]>;
+  users$: Observable<IUser[]>;
   articles$: Observable<IArticle[]>;
-  // usersJPH$: Observable<IUserJPH[]>;
+  // usersJPH$: Observable<IUser[]>;
   constructor(
     private store: Store<rootReducer.State>,
-    private jsonPlaceholderService: JsonPlaceholderService
+    private jsonPlaceholderService: HttpMockService
   ) {
     this.numberV$ = store.pipe(select(rootReducer.selectNumberV));
     this.users$ = store.pipe(select(rootReducer.selectUsers));
