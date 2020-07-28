@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Person } from '../../classes/person';
 
 @Component({
   selector: 'app-bindings',
@@ -12,7 +11,6 @@ export class BindingsComponent implements OnInit {
   isDisabled = true;
   backgroundColor = 'green';
   clickArray: string[] = [];
-  names = [new Person(1, 'Ivan'), new Person(2, 'Petr'), new Person(3, 'Alex')];
   ngModelVar = 'any';
   constructor() {}
 

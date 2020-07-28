@@ -6,10 +6,12 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class HttpMockService {
-  httpAddressJPH = 'https://jsonplaceholder.typicode.com';
+  httpAddressUsers = 'https://jsonplaceholder.typicode.com/users';
+  httpAddressUsersMock = 'assets/users.data.json';
 
   constructor(private httpClient: HttpClient) {}
   getUsers() {
-    return this.httpClient.get<IUser[]>(`${this.httpAddressJPH}/users`);
+    // return this.httpClient.get<IUser[]>(this.httpAddressUsers);
+    return this.httpClient.get<IUser[]>(this.httpAddressUsersMock);
   }
 }
