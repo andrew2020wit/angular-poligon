@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { EMPTY } from 'rxjs';
+import { EMPTY, of } from 'rxjs';
 import { map, mergeMap, catchError } from 'rxjs/operators';
 import { HttpMockService } from '@app/services/HttpMock/HttpMock.service';
 
 @Injectable()
-export class JPHEffects {
+export class UsersEffects {
   loadUsers$ = createEffect(() =>
     this.actions$.pipe(
-      ofType('[JPH] getUsers'),
+      ofType('[EntityStore] loadUsers'),
       mergeMap(() =>
         this.httpMockService.getUsers().pipe(
-          map((users) => ({
-            type: '[JPH] getUsersSuccess',
-            payload: { users },
+          map((usersx) => ({
+            type: '[EntityStore] loadedUsers',
+            users: usersx,
           })),
-          catchError(() => EMPTY)
+          catchError(() => of({ type: '[EntityStore] User Loaded Error' }))
         )
       )
     )

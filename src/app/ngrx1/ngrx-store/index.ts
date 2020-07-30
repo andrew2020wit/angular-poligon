@@ -1,52 +1,94 @@
 import { IArticle } from '@app/interfaces/IArticle';
-import { Action, ActionReducerMap, props } from '@ngrx/store';
+import {
+  Action,
+  ActionReducerMap,
+  createFeatureSelector,
+  props,
+} from '@ngrx/store';
 import { createSelector } from '@ngrx/store';
-import * as NumberVReducer from './numberV/numberV.reducer';
-import * as ArticlesReducer from './articles/articles.reducer';
-import * as UsersReducer from './users/users.reducer';
-import * as JPHReducer from './JPH/JPH.reducer';
+import * as fromArticles from './articles/articles.reducer';
+import * as fromUsers from './users/users.reducer';
+import { UsersEffects } from './users/users.effects';
+import { ArticlesEffects } from '@ngrxStore/articles/articles.effects';
+
 import {
   DEFAULT_ROUTER_FEATURENAME,
   routerReducer,
   RouterReducerState,
 } from '@ngrx/router-store';
 
-// import * as ArticlesReducer from './articles/articles.reducer';
 export interface State {
-  numberV: NumberVReducer.State;
-  articles: ArticlesReducer.State;
-  users: UsersReducer.State;
-  JPH: JPHReducer.State;
+  articles: fromArticles.State;
+  users: fromUsers.State;
   [DEFAULT_ROUTER_FEATURENAME]: RouterReducerState;
 }
 
 export const reducers: ActionReducerMap<State> = {
-  numberV: NumberVReducer.reducer,
-  articles: ArticlesReducer.reducer,
-  users: UsersReducer.reducer,
-  JPH: JPHReducer.reducer,
+  articles: fromArticles.reducer,
+  users: fromUsers.reducer,
   [DEFAULT_ROUTER_FEATURENAME]: routerReducer,
 };
 
-export const selectNumberVState = (state: State) => state.numberV;
-export const selectArticleState = (state: State) => state.articles;
-export const selectUserState = (state: State) => state.users;
+// Selectors Users
 
-export const selectNumberV = createSelector(
-  selectNumberVState,
-  (state: NumberVReducer.State) => state.numberV
+export const selectUsersState = createFeatureSelector<fromUsers.State>('users');
+// export const selectUserIds = createSelector(
+//   selectUsersState,
+//   fromUsers.selectUserIds // shorthand for usersState => fromUser.selectUserIds(usersState)
+// );
+export const selectUserEntities = createSelector(
+  selectUsersState,
+  fromUsers.selectUserEntities
 );
-export const selectArticles = createSelector(
-  selectArticleState,
-  (state: ArticlesReducer.State) => state.articles
+export const selectAllUsers = createSelector(
+  selectUsersState,
+  fromUsers.selectAllUsers
 );
-export const selectUsers = createSelector(
-  selectUserState,
-  (state: UsersReducer.State) => state.users
+// export const selectUserTotal = createSelector(
+//   selectUsersState,
+//   fromUsers.selectUserTotal
+// );
+export const selectCurrentUserId = createSelector(
+  selectUsersState,
+  fromUsers.getSelectedUserId
 );
-export const selectArticlesByIserId = createSelector(
-  selectArticles,
-  (articles: IArticle[], { userId }) => {
-    return articles.filter((article) => article.user_id === userId);
-  }
+
+export const selectCurrentUser = createSelector(
+  selectUserEntities,
+  selectCurrentUserId,
+  (userEntities, userId) => userEntities[userId]
 );
+
+// Selectors Articles ==================
+export const selectArticlesState = createFeatureSelector<fromArticles.State>(
+  'articles'
+);
+// export const selectArticleIds = createSelector(
+//   selectArticlesState,
+//   fromArticles.selectArticleIds // shorthand for articlesState => fromArticle.selectArticleIds(articlesState)
+// );
+export const selectArticleEntities = createSelector(
+  selectArticlesState,
+  fromArticles.selectArticleEntities
+);
+export const selectAllArticles = createSelector(
+  selectArticlesState,
+  fromArticles.selectAllArticles
+);
+// export const selectArticleTotal = createSelector(
+//   selectArticlesState,
+//   fromArticles.selectArticleTotal
+// );
+export const selectCurrentArticleId = createSelector(
+  selectArticlesState,
+  fromArticles.getSelectedArticleId
+);
+
+export const selectCurrentArticle = createSelector(
+  selectArticleEntities,
+  selectCurrentArticleId,
+  (articleEntities, articleId) => articleEntities[articleId]
+);
+// =====================================
+// Effects
+export const effectsAll = [UsersEffects, ArticlesEffects];

@@ -20,11 +20,10 @@ export class ContentService {
         { name: 'Flexbox', link: '/flex-boxes' },
         { name: 'Grid Layout', link: '/grid' },
         { name: 'IndexedDB-Log', link: '/indexed-dblog' },
-        { name: 'ngrx1', link: '/ngrx1' },
       ],
     },
     {
-      blockName: 'RxJS',
+      blockName: 'RxJS/Ngrx',
       links: [
         { name: 'RxJS', link: '/rx/rx-intro' },
         { name: 'Http: GitHub API', link: '/rx/http' },
@@ -32,6 +31,7 @@ export class ContentService {
           name: 'Http: CRUD',
           link: '/rx/http-json-placeholder',
         },
+        { name: 'NgRxView: entity', link: '/ngrx1' },
       ],
     },
     {

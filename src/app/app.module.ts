@@ -31,9 +31,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { reducers } from '@ngrxStore/index';
+import { effectsAll, reducers } from '@ngrxStore/index';
 import { metaReducers } from '@app/ngrx1/ngrx-store/metaReducers/metaReducers';
-import { JPHEffects } from '@ngrxStore/JPH/JPH.effects';
+// import { JPHEffects } from '@ngrxStore/JPH/JPH.effects';
 
 @NgModule({
   declarations: [AppComponent, FormsComponent, PipesComponent, TextSpoilerPipe],
@@ -68,7 +68,8 @@ import { JPHEffects } from '@ngrxStore/JPH/JPH.effects';
       maxAge: 25,
       logOnly: environment.production,
     }),
-    EffectsModule.forRoot([JPHEffects]),
+    // EffectsModule.forRoot([JPHEffects]),
+    EffectsModule.forRoot(effectsAll),
     StoreRouterConnectingModule.forRoot(),
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'ru-ru' }],

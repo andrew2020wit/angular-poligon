@@ -1,28 +1,34 @@
-import { Action, createReducer, on } from '@ngrx/store';
-import * as ArticlesAction from '@ngrxStore/articles/articles.actions';
 import { IArticle } from '@app/interfaces/IArticle';
+import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
+import { Action, createReducer, on } from '@ngrx/store';
+import * as ArticlesActions from './articles.actions';
 
-export interface State {
-  articles: IArticle[];
+export interface State extends EntityState<IArticle> {
+  // additional entities state properties
+  selectedArticleId: number;
 }
-export const initialState: State = {
-  articles: [{ id: 0, user_id: 0, title: 'none' }],
-};
+
+export function sortByTitle(a: IArticle, b: IArticle): number {
+  return a.title.localeCompare(b.title);
+}
+
+export const adapter: EntityAdapter<IArticle> = createEntityAdapter<IArticle>({
+  sortComparer: sortByTitle,
+});
+
+export const initialState: State = adapter.getInitialState({
+  // additional entity state properties
+  selectedArticleId: null,
+});
 
 const _reducer = createReducer(
   initialState,
-  on(ArticlesAction.deletArticles, () => initialState),
-  on(ArticlesAction.getArticles, () => {
-    const st: State = {
-      articles: [
-        { id: 1, user_id: 1, title: 'title1' },
-        { id: 2, user_id: 2, title: 'title2' },
-        { id: 3, user_id: 1, title: 'title3' },
-        { id: 4, user_id: 1, title: 'title4' },
-        { id: 5, user_id: 2, title: 'title5' },
-        { id: 6, user_id: 3, title: 'title6' },
-      ],
-    };
+  on(ArticlesActions.loadArticles, (state) => state),
+  on(ArticlesActions.loadedArticles, (state, { articles }) => {
+    return adapter.setAll(articles, state);
+  }),
+  on(ArticlesActions.selectedArticle, (state, { id }) => {
+    const st: State = { ...state, selectedArticleId: id };
     return st;
   })
 );
@@ -30,3 +36,24 @@ const _reducer = createReducer(
 export function reducer(state: State | undefined, action: Action) {
   return _reducer(state, action);
 }
+export const getSelectedArticleId = (state: State) => state.selectedArticleId;
+
+// get the selectors
+const {
+  selectIds,
+  selectEntities,
+  selectAll,
+  selectTotal,
+} = adapter.getSelectors();
+
+// select the array of article ids
+export const selectArticleIds = selectIds;
+
+// select the dictionary of article entities
+export const selectArticleEntities = selectEntities;
+
+// select the array of articles
+export const selectAllArticles = selectAll;
+
+// select the total article count
+export const selectArticleTotal = selectTotal;

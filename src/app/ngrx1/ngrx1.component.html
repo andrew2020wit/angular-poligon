@@ -1,26 +1,26 @@
 <h1>ngrx1-view </h1>
-<h2>numberV</h2>
-<p>numberV$: {{numberV$ | async}}</p>
-<button (click)="AddNumberV(10)">Add 10 to numerV Store</button>
-<button (click)="ReserNumberV()">Reset numerV Store</button>
 
-<h2>Users</h2>
+<h2>Authors</h2>
 <ul>
-  <li *ngFor="let user of (users$ |async) " (click)="selectArticlesByUserId(user.id)">
-    <button>{{user.name}}</button>
+  <li *ngFor="let user of (users$ |async) ">
+
+   <button (click)="selectUser(user.id)"
+           [ngClass]="{selected: (selectedUser === user.id) }">{{user.name}}</button>
+  </li>
+  <li><button (click)="selectAllUser()"> All Users articles</button></li>
+</ul>
+<h2>Articles</h2>
+<ul>
+  <li *ngFor="let article of visibleArticles ">
+    <!--      (click)="selectArticlesByUserId(user.id)"-->
+
+    <button (click)="selectArticle(article.id)"
+            [ngClass]="{selected: (selectedArticle === article.id) }">{{article.title}}</button>
   </li>
 </ul>
-<p>Users</p>
-<button (click)="getUser()">SetUser</button>
-<button (click)="resetUser()">resetUser</button>
-<ul>
-  <p>Articles</p>
-  <li *ngFor="let article of (articles$ |async) ">{{article.title}}</li>
-</ul>
-<button (click)="selectArticlesByUserId(1)">test</button>
+<h2>Articles text</h2>
 
-<!--<h2>JsonPlaceholder Users</h2>-->
+<div style="width: 400px">{{currentArticleText}}</div>
 
-<!--<ul>-->
-<!--  <li *ngFor="let user of (usersJPH$ | async)"> usersJPH: {{user.name}} </li>-->
-<!--</ul>-->
+<!--<p>selectedUser: {{selectedUser}}</p>-->
+<!--<p>selectedArticle: {{selectedArticle}}</p>-->

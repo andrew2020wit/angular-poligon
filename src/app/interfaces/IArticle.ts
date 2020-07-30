@@ -1,5 +1,6 @@
 export interface IArticle {
   id: number;
-  user_id: number;
+  authorId: number;
   title: string;
+  text: string;
 }
