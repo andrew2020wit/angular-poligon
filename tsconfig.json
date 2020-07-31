@@ -13,10 +13,6 @@
     {
       "path": "./tsconfig.spec.json"
     }
-  ],
-  "baseUrl": "src/",
-  "paths": {
-    "@app/*": ["app/*"],
-    "@ngrxStore/*": ["app/ngrx1/ngrx-store/*"]
-  }
+  ]
+
 }

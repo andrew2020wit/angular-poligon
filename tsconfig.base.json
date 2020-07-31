@@ -1,11 +1,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "src/",
-    "paths": {
-      "@app/*": ["app/*"],
-      "@ngrxStore/*": ["app/ngrx1/ngrx-store/*"]
-    },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,

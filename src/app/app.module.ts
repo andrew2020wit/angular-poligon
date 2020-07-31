@@ -33,7 +33,6 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { effectsAll, reducers } from '@ngrxStore/index';
 import { metaReducers } from '@app/ngrx1/ngrx-store/metaReducers/metaReducers';
-// import { JPHEffects } from '@ngrxStore/JPH/JPH.effects';
 
 @NgModule({
   declarations: [AppComponent, FormsComponent, PipesComponent, TextSpoilerPipe],
@@ -68,7 +67,6 @@ import { metaReducers } from '@app/ngrx1/ngrx-store/metaReducers/metaReducers';
       maxAge: 25,
       logOnly: environment.production,
     }),
-    // EffectsModule.forRoot([JPHEffects]),
     EffectsModule.forRoot(effectsAll),
     StoreRouterConnectingModule.forRoot(),
   ],
