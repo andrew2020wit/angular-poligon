@@ -1,3 +1,4 @@
+import { NestNgrxClientComponent } from './ngrx1/nest-ngrx-client/nest-client.component';
 import { Ngrx1Component } from './ngrx1/ngrx1.component';
 import { ExitSecretGuard } from './bases/secret/exit-secret.guard';
 import { SecretGuard } from './bases/secret/secret.guard';
@@ -42,6 +43,7 @@ const appRoutes: Routes = [
   { path: 'route2/id/:id', component: Route2Component },
   { path: 'route2', component: Route2Component },
   { path: 'ngrx1', component: Ngrx1Component },
+  { path: 'nest-ngrx', component: NestNgrxClientComponent },
   {
     path: 'secret',
     component: SecretComponent,

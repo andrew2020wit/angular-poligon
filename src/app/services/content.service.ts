@@ -32,6 +32,7 @@ export class ContentService {
           link: '/rx/http-json-placeholder',
         },
         { name: 'NgRxView: entity', link: '/ngrx1' },
+        { name: 'nest-ngrx', link: '/nest-ngrx' },
       ],
     },
     {

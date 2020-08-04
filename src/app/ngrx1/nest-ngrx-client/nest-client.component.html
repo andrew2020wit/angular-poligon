@@ -1,0 +1,7 @@
+<p>nest-client works!</p>
+<ul>Users
+  <li *ngFor="let user of (users$ | async)">{{user.name}}</li>
+</ul>
+<ul>Articles
+  <li *ngFor="let article of (articles$ | async)">{{article.title}}</li>
+</ul>

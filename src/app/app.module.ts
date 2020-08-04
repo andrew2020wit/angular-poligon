@@ -1,3 +1,8 @@
+import {
+  entityConfig,
+  defaultDataServiceConfig,
+} from './ngrx1/ngrx-store/ngrx-data/Entity-metadata';
+import { NestjsModule } from './nestjs/nestjs.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -33,6 +38,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { effectsAll, reducers } from '@ngrxStore/index';
 import { metaReducers } from '@app/ngrx1/ngrx-store/metaReducers/metaReducers';
+import { EntityDataModule, DefaultDataServiceConfig } from '@ngrx/data';
 
 @NgModule({
   declarations: [AppComponent, FormsComponent, PipesComponent, TextSpoilerPipe],
@@ -55,6 +61,7 @@ import { metaReducers } from '@app/ngrx1/ngrx-store/metaReducers/metaReducers';
     MatIconModule,
     MatListModule,
     Ngrx1Module,
+    NestjsModule,
     TestingModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
@@ -68,9 +75,13 @@ import { metaReducers } from '@app/ngrx1/ngrx-store/metaReducers/metaReducers';
       logOnly: environment.production,
     }),
     EffectsModule.forRoot(effectsAll),
+    EntityDataModule.forRoot(entityConfig),
     StoreRouterConnectingModule.forRoot(),
   ],
-  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'ru-ru' }],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'ru-ru' },
+    { provide: DefaultDataServiceConfig, useValue: defaultDataServiceConfig },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
