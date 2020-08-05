@@ -5,7 +5,7 @@ import { SecretGuard } from './bases/secret/secret.guard';
 import { SecretComponent } from './bases/secret/secret.component';
 import { Route2Component } from './bases/route2/route2.component';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { BindingsComponent } from './bases/bindings/bindings.component';
 import { FormsComponent } from './forms/forms.component';
 import { ParentComponent } from './bases/parent/parent.component';
@@ -72,11 +72,22 @@ const appRoutes: Routes = [
     ],
   },
   { path: '', component: HomePageComponent },
+  {
+    path: 'lazy-module',
+    loadChildren: () =>
+      import('./lazy-module/lazy-module.module').then(
+        (m) => m.LazyModuleModule
+      ),
+  },
   { path: '**', component: NotFoundPageComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(appRoutes)],
+  imports: [
+    RouterModule.forRoot(appRoutes, {
+      preloadingStrategy: PreloadAllModules,
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

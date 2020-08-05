@@ -63,6 +63,7 @@ export class ContentService {
         { name: 'Pipes', link: '/pipes' },
         { name: 'ActivatedRoute', link: '/route2' },
         { name: 'SecretPage', link: '/secret' },
+        { name: 'lazy-module', link: '/lazy-module' },
       ],
     },
   ];
