@@ -3,11 +3,12 @@
 Test-demo angular project.
 
 1. Angular Basics (reactive forms,
- animation, custom directive, pipe, services)
-1. Routing, modules
-2. Angular Material
-3. RxJS
-4. NgRx
-5. Unit-Test, TestBed.
-88. IndexedDataBase.
-99. FlexBox, GridLayout 
+   animation, custom directive, pipe, services, dinamic component)
+1. Routing, modules, lazy-module
+1. Angular Material
+1. RxJS
+1. NgRx
+1. Nestjs-client & ngrx-data
+1. Unit-Test, TestBed.
+1. IndexedDataBase.
+1. FlexBox, GridLayout

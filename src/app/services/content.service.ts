@@ -20,6 +20,7 @@ export class ContentService {
         { name: 'Flexbox', link: '/flex-boxes' },
         { name: 'Grid Layout', link: '/grid' },
         { name: 'IndexedDB-Log', link: '/indexed-dblog' },
+        { name: 'Dinamic Component', link: '/dinamic-component' },
       ],
     },
     {

@@ -15,8 +15,12 @@ import { IndexedDBLogComponent } from './indexed-dblog/indexed-dblog.component';
 import { Route2Component } from './route2/route2.component';
 import { RouterModule } from '@angular/router';
 import { SecretComponent } from './secret/secret.component';
+import { DinamicComponent } from './dinamic/dinamic.component';
+import { Din1Component } from './dinamic/din1/din1.component';
+import { Din2Component } from './dinamic/din2/din2.component';
 
 @NgModule({
+  entryComponents: [Din1Component, Din2Component],
   declarations: [
     BindingsComponent,
     ParentComponent,
@@ -29,6 +33,9 @@ import { SecretComponent } from './secret/secret.component';
     IndexedDBLogComponent,
     Route2Component,
     SecretComponent,
+    DinamicComponent,
+    Din1Component,
+    Din2Component,
   ],
   exports: [BindingsComponent, ParentComponent],
   imports: [
